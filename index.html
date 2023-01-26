@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sherpa &mdash; sherpa 0.9.1 documentation</title>
+  <title>sherpa &mdash; sherpa 1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/user.define.css" type="text/css" />
@@ -30,7 +30,7 @@
             <a href="#" class="icon icon-home"> sherpa
           </a>
               <div class="version">
-                0.9.1
+                1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -45,14 +45,13 @@
 <li class="toctree-l1"><a class="reference internal" href="python/huggingface/index.html">Try sherpa with Huggingface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python/installation/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python/streaming_asr/index.html">Streaming ASR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python/offline_asr/index.html">Non-streaming ASR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/offline_asr/index.html">Non-streaming speech recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python/faq.html">Frequently asked questions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">For C++ users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cpp/installation/index.html">C++ frontend Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cpp/offline_asr/index.html">Non-streaming ASR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cpp/online_asr/index.html">Streaming ASR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp/installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp/pretrained_models/index.html">Pre-trained models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ncnn</span></p>
 <ul>
@@ -61,6 +60,14 @@
 <p class="caption" role="heading"><span class="caption-text">onnx</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="onnx/index.html">sherpa-onnx</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Triton</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="triton/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triton/installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triton/server/index.html">Triton-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triton/client/index.html">Triton-client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triton/perf/index.html">Perf Analyzer</a></li>
 </ul>
 
         </div>
@@ -120,7 +127,8 @@ for both streaming ASR and offline ASR (i.e., non-streaming ASR).</p>
 <li class="toctree-l2"><a class="reference internal" href="python/streaming_asr/lstm/index.html">LSTM transducer based streaming ASR</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python/offline_asr/index.html">Non-streaming ASR</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="python/offline_asr/index.html">Non-streaming speech recognition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/offline_asr/standalone/index.html">Standalone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python/offline_asr/conformer/index.html">Conformer transducer based non-streaming ASR</a></li>
 </ul>
 </li>
@@ -138,28 +146,27 @@ for both streaming ASR and offline ASR (i.e., non-streaming ASR).</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">For C++ users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cpp/installation/index.html">C++ frontend Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cpp/installation/conda-windows.html">conda for Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpp/installation/conda-linux.html">conda for Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpp/installation/from-source.html">Install from source (Linux/macOS/Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp/installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cpp/installation/index.html#installation-for-advanced-users-developers">Installation for advanced users/developers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cpp/offline_asr/index.html">Non-streaming ASR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cpp/offline_asr/api.html">C++ APIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpp/offline_asr/gigaspeech.html">Pretrained model with GigaSpeech</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpp/offline_asr/wenetspeech.html">Pretrained model with WenetSpeech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp/pretrained_models/index.html">Pre-trained models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cpp/pretrained_models/offline_ctc.html">Offline CTC models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp/pretrained_models/offline_transducer.html">Offline transducer models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp/pretrained_models/online_transducer.html">Online transducer models</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cpp/online_asr/index.html">Streaming ASR</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">ncnn</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ncnn/index.html">sherpa-ncnn</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ncnn/index.html#build-sherpa-ncnn-for-linux-and-macos">Build sherpa-ncnn for Linux and macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ncnn/index.html#build-sherpa-ncnn-for-windows">Build sherpa-ncnn for Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ncnn/index.html#speech-recognition-with-sherpa-ncnn">Speech recognition with sherpa-ncnn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ncnn/install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ncnn/python/index.html">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ncnn/endpoint.html">Endpointing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ncnn/android/index.html">Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ncnn/pretrained_models/index.html">Pre-trained models</a></li>
 </ul>
 </li>
 </ul>
@@ -171,6 +178,38 @@ for both streaming ASR and offline ASR (i.e., non-streaming ASR).</p>
 <li class="toctree-l2"><a class="reference internal" href="onnx/index.html#build-sherpa-onnx-for-linux-and-macos">Build sherpa-onnx for Linux and macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="onnx/index.html#build-sherpa-onnx-for-windows">Build sherpa-onnx for Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="onnx/index.html#speech-recognition-with-sherpa-onnx">Speech recognition with sherpa-onnx</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Triton</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="triton/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="triton/installation/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/server/index.html">Triton-server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/client/index.html">Triton-client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/perf/index.html">Perf Analyzer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="triton/installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="triton/installation/index.html#build-triton-image">Build Triton Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/installation/index.html#launch-a-inference-container">Launch a inference container</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="triton/server/index.html">Triton-server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="triton/server/index.html#deploy-streaming-asr-models-with-onnx">Deploy streaming ASR models with Onnx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/server/index.html#deploy-offline-asr-models-with-torchscript">Deploy offline ASR models with torchscript</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="triton/client/index.html">Triton-client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="triton/client/index.html#send-requests-using-client">Send requests using client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/client/index.html#decode-manifests">Decode manifests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="triton/perf/index.html">Perf Analyzer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="triton/perf/index.html#generate-input-data-from-audio-files">Generate Input Data from Audio Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/perf/index.html#test-throughput-using-perf-analyzer">Test Throughput using Perf Analyzer</a></li>
 </ul>
 </li>
 </ul>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Streaming ASR &mdash; sherpa 0.9.1 documentation</title>
+  <title>Streaming ASR &mdash; sherpa 1.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/user.define.css" type="text/css" />
@@ -18,9 +18,7 @@
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="sherpa-ncnn" href="../../ncnn/index.html" />
-    <link rel="prev" title="Pretrained model with WenetSpeech" href="../offline_asr/wenetspeech.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +29,7 @@
             <a href="../../index.html" class="icon icon-home"> sherpa
           </a>
               <div class="version">
-                0.9.1
+                1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -46,14 +44,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../python/huggingface/index.html">Try sherpa with Huggingface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/installation/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/streaming_asr/index.html">Streaming ASR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/offline_asr/index.html">Non-streaming ASR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/offline_asr/index.html">Non-streaming speech recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/faq.html">Frequently asked questions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">For C++ users</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">C++ frontend Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../offline_asr/index.html">Non-streaming ASR</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Streaming ASR</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pretrained_models/index.html">Pre-trained models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ncnn</span></p>
 <ul>
@@ -62,6 +59,14 @@
 <p class="caption" role="heading"><span class="caption-text">onnx</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">sherpa-onnx</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Triton</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/server/index.html">Triton-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/client/index.html">Triton-client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/perf/index.html">Perf Analyzer</a></li>
 </ul>
 
         </div>
@@ -98,7 +103,7 @@ streaming/online ASR.</p>
 <a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/conv_emformer_transducer_stateless2">https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/conv_emformer_transducer_stateless2</a>
 at present.</p>
 </div>
-<p>Please refer to <a class="reference internal" href="../installation/from-source.html#cpp-installation"><span class="std std-ref">Install from source (Linux/macOS/Windows)</span></a> for installation.</p>
+<p>Please refer to <a class="reference internal" href="../installation/index.html#cpp-installation"><span class="std std-ref">Installation</span></a> for installation.</p>
 <p>After running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span></code>, you should find the following files:</p>
 <blockquote>
 <div><ul class="simple">
@@ -113,14 +118,14 @@ at present.</p>
 shows how to use the C++ API for real-time speech recognition with a microphone.
 After running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span></code>, you can also find an executable <code class="docutils literal notranslate"><span class="pre">bin/test_online_recognizer_microphone</span></code>.
 The following shows how to use it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/sherpa/build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa/build
 
-git lfs install
-git clone https://huggingface.co/Zengwei/icefall-asr-librispeech-conv-emformer-transducer-stateless2-2022-07-05
+git<span class="w"> </span>lfs<span class="w"> </span>install
+git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/Zengwei/icefall-asr-librispeech-conv-emformer-transducer-stateless2-2022-07-05
 
-./bin/test_online_recognizer_microphone <span class="se">\</span>
-  ./icefall-asr-librispeech-conv-emformer-transducer-stateless2-2022-07-05/exp/cpu-jit-epoch-30-avg-10-torch-1.10.0.pt <span class="se">\</span>
-  ./icefall-asr-librispeech-conv-emformer-transducer-stateless2-2022-07-05/data/lang_bpe_500/tokens.txt
+./bin/test_online_recognizer_microphone<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>./icefall-asr-librispeech-conv-emformer-transducer-stateless2-2022-07-05/exp/cpu-jit-epoch-30-avg-10-torch-1.10.0.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>./icefall-asr-librispeech-conv-emformer-transducer-stateless2-2022-07-05/data/lang_bpe_500/tokens.txt
 </pre></div>
 </div>
 <p>It will print something like below:</p>
@@ -140,10 +145,7 @@ git clone https://huggingface.co/Zengwei/icefall-asr-librispeech-conv-emformer-t
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../offline_asr/wenetspeech.html" class="btn btn-neutral float-left" title="Pretrained model with WenetSpeech" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../ncnn/index.html" class="btn btn-neutral float-right" title="sherpa-ncnn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

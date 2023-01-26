@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C++ APIs &mdash; sherpa 0.9.1 documentation</title>
+  <title>C++ APIs &mdash; sherpa 1.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/user.define.css" type="text/css" />
@@ -18,9 +18,7 @@
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Pretrained model with GigaSpeech" href="gigaspeech.html" />
-    <link rel="prev" title="Non-streaming ASR" href="index.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +29,7 @@
             <a href="../../index.html" class="icon icon-home"> sherpa
           </a>
               <div class="version">
-                0.9.1
+                1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -46,19 +44,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../python/huggingface/index.html">Try sherpa with Huggingface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/installation/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/streaming_asr/index.html">Streaming ASR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/offline_asr/index.html">Non-streaming ASR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/offline_asr/index.html">Non-streaming speech recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/faq.html">Frequently asked questions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">For C++ users</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">C++ frontend Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Non-streaming ASR</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">C++ APIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gigaspeech.html">Pretrained model with GigaSpeech</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wenetspeech.html">Pretrained model with WenetSpeech</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../online_asr/index.html">Streaming ASR</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pretrained_models/index.html">Pre-trained models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ncnn</span></p>
 <ul>
@@ -67,6 +59,14 @@
 <p class="caption" role="heading"><span class="caption-text">onnx</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">sherpa-onnx</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Triton</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/server/index.html">Triton-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/client/index.html">Triton-client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/perf/index.html">Perf Analyzer</a></li>
 </ul>
 
         </div>
@@ -83,7 +83,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Non-streaming ASR</a> &raquo;</li>
       <li>C++ APIs</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/k2-fsa/sherpa/blob/master/docs/source/cpp/offline_asr/api.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -108,45 +107,45 @@ gives an example of how to use the APIs to decode wave files.</p>
 </div>
 <p>The content of the <a class="reference external" href="https://github.com/k2-fsa/sherpa-torch-cpp-makefile-example/blob/master/Makefile">Makefile</a>
 from the above repository is given below:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">sherpa_install_dir</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import os; import sherpa; print(os.path.dirname(sherpa.__file__))&#39;</span><span class="k">)</span>
-<span class="nv">sherpa_cxx_flags</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import os; import sherpa; print(sherpa.cxx_flags)&#39;</span><span class="k">)</span>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">sherpa_install_dir</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import os; import sherpa; print(os.path.dirname(sherpa.__file__))&#39;</span><span class="k">)</span>
+<span class="nv">sherpa_cxx_flags</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import os; import sherpa; print(sherpa.cxx_flags)&#39;</span><span class="k">)</span>
 
-<span class="nf">$(info sherpa_install_dir</span><span class="o">:</span> <span class="k">$(</span><span class="nv">sherpa_install_dir</span><span class="k">)</span>)
-<span class="nf">$(info sherpa_cxx_flags</span><span class="o">:</span> <span class="k">$(</span><span class="nv">sherpa_cxx_flags</span><span class="k">)</span>)
+<span class="nf">$(info sherpa_install_dir</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">sherpa_install_dir</span><span class="k">)</span>)
+<span class="nf">$(info sherpa_cxx_flags</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">sherpa_cxx_flags</span><span class="k">)</span>)
 
-<span class="nv">CXXFLAGS</span> <span class="o">:=</span> -I<span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/include
-<span class="nv">CXXFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/lib
-<span class="nv">CXXFLAGS</span> <span class="o">+=</span> <span class="k">$(</span>sherpa_cxx_flags<span class="k">)</span>
-<span class="nv">CXXFLAGS</span> <span class="o">+=</span> -std<span class="o">=</span>c++14
+<span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-I<span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/include
+<span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Wl,-rpath,<span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/lib
+<span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">$(</span>sherpa_cxx_flags<span class="k">)</span>
+<span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-std<span class="o">=</span>c++14
 
-<span class="nv">LDFLAGS</span> <span class="o">:=</span> -L <span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/lib -lsherpa_offline_recognizer
+<span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-L<span class="w"> </span><span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/lib<span class="w"> </span>-lsherpa_offline_recognizer
 
-<span class="nf">$(info CXXFLAGS</span><span class="o">:</span> <span class="k">$(</span><span class="nv">CXXFLAGS</span><span class="k">)</span>)
-<span class="nf">$(info LDFLAGS</span><span class="o">:</span> <span class="k">$(</span><span class="nv">LDFLAGS</span><span class="k">)</span>)
+<span class="nf">$(info CXXFLAGS</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">CXXFLAGS</span><span class="k">)</span>)
+<span class="nf">$(info LDFLAGS</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">LDFLAGS</span><span class="k">)</span>)
 
-<span class="nf">test_decode_files</span><span class="o">:</span> <span class="n">test_decode_files</span>.<span class="n">cc</span>
-  <span class="k">$(</span>CXX<span class="k">)</span> <span class="k">$(</span>CXXFLAGS<span class="k">)</span> -o <span class="nv">$@</span> $&lt; <span class="k">$(</span>LDFLAGS<span class="k">)</span>
+<span class="nf">test_decode_files</span><span class="o">:</span><span class="w"> </span><span class="n">test_decode_files</span>.<span class="n">cc</span>
+<span class="w">  </span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CXXFLAGS<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>$&lt;<span class="w"> </span><span class="k">$(</span>LDFLAGS<span class="k">)</span>
 
-<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">clean</span>
+<span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
 <span class="nf">clean</span><span class="o">:</span>
-  <span class="k">$(</span>RM<span class="k">)</span> test_decode_files
+<span class="w">  </span><span class="k">$(</span>RM<span class="k">)</span><span class="w"> </span>test_decode_files
 </pre></div>
 </div>
 <p>Basically, you only need to specify the following stuff to use the non-streaming
 ASR APIs:</p>
 <ul>
 <li><p>The path to find the header file. You provide:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span> <span class="o">:=</span> -I<span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/include
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-I<span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/include
 </pre></div>
 </div>
 </li>
 <li><p>The library to link to. You provide:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">LDFLAGS</span> <span class="o">:=</span> -L <span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/lib -lsherpa_offline_recognizer
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-L<span class="w"> </span><span class="k">$(</span>sherpa_install_dir<span class="k">)</span>/lib<span class="w"> </span>-lsherpa_offline_recognizer
 </pre></div>
 </div>
 </li>
 <li><p>The CXX flags used to compile <code class="docutils literal notranslate"><span class="pre">sherpa</span></code>. You provide:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> <span class="k">$(</span>sherpa_cxx_flags<span class="k">)</span>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">$(</span>sherpa_cxx_flags<span class="k">)</span>
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -168,10 +167,7 @@ std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, sherpa
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Non-streaming ASR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gigaspeech.html" class="btn btn-neutral float-right" title="Pretrained model with GigaSpeech" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
