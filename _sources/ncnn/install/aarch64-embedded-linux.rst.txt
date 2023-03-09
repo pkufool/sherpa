@@ -67,7 +67,7 @@ Finally, let us build `sherpa-ncnn`_.
   cd sherpa-ncnn
   ./build-aarch64-linux-gnu.sh
 
-After building, you will get three binaries:
+After building, you will get two binaries:
 
 .. code-block:: bash
 
@@ -83,6 +83,11 @@ That's it!
   - ``sherpa-ncnn`` is for decoding a single file
   - ``sherpa-ncnn-alsa`` is for real-time speech recongition by reading
     the microphone with `ALSA <https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture>`_
+
+.. _sherpa-ncnn-alsa:
+
+sherpa-ncnn-alsa
+----------------
 
 .. caution::
 

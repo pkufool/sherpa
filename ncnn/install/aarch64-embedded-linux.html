@@ -58,6 +58,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">sherpa-ncnn</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="videos.html">Installation videos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="linux.html">Linux</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macos.html">macOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="windows.html">Windows</a></li>
@@ -65,6 +66,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Embedded Linux (aarch64)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#install-toolchain">Install toolchain</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-sherpa-ncnn">Build sherpa-ncnn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sherpa-ncnn-alsa">sherpa-ncnn-alsa</a></li>
 </ul>
 </li>
 </ul>
@@ -72,7 +74,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../endpoint.html">Endpointing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pretrained_models/index.html">Pre-trained models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQs</a></li>
 </ul>
 </li>
 </ul>
@@ -165,7 +170,7 @@ run:</p>
 ./build-aarch64-linux-gnu.sh
 </pre></div>
 </div>
-<p>After building, you will get three binaries:</p>
+<p>After building, you will get two binaries:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>build-aarch64-linux-gnu/install/bin/
 total<span class="w"> </span>10M
 -rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>kuangfangjun<span class="w"> </span>root<span class="w"> </span><span class="m">3</span>.4M<span class="w"> </span>Jan<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">21</span>:16<span class="w"> </span>sherpa-ncnn
@@ -181,6 +186,9 @@ total<span class="w"> </span>10M
 the microphone with <a class="reference external" href="https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture">ALSA</a></p></li>
 </ul>
 </div>
+</section>
+<section id="sherpa-ncnn-alsa">
+<span id="id1"></span><h2>sherpa-ncnn-alsa<a class="headerlink" href="#sherpa-ncnn-alsa" title="Permalink to this headline"></a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>We recommend that you use <code class="docutils literal notranslate"><span class="pre">sherpa-ncnn-alsa</span></code> on embedded systems such
