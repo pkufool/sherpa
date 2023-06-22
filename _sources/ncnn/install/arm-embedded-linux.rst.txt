@@ -6,6 +6,25 @@ Embedded Linux (arm)
 This page describes how to build `sherpa-ncnn`_ for embedded Linux (arm, 32-bit)
 with cross-compiling on an x86 machine with Ubuntu OS.
 
+.. caution::
+
+   If you want to build `sherpa-ncnn`_ directly on your board, please don't
+   use this document. Refer to :ref:`install_sherpa_ncnn_on_linux` instead.
+
+.. caution::
+
+   If you want to build `sherpa-ncnn`_ directly on your board, please don't
+   use this document. Refer to :ref:`install_sherpa_ncnn_on_linux` instead.
+
+.. caution::
+
+   If you want to build `sherpa-ncnn`_ directly on your board, please don't
+   use this document. Refer to :ref:`install_sherpa_ncnn_on_linux` instead.
+
+.. hint::
+
+   This page is for cross-compiling.
+
 Install toolchain
 -----------------
 
@@ -148,7 +167,7 @@ Read below if you want to learn more.
   You can use the following commands to check that and you will find
   they depend only on system libraries.
 
-    .. code-block::
+    .. code-block:: bash
 
       $ readelf -d build-arm-linux-gnueabihf/install/bin/sherpa-ncnn
 

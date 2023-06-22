@@ -1,5 +1,7 @@
+.. _online_transducer_pretrained_models:
+
 Online transducer models
-=========================
+========================
 
 .. hint::
 
@@ -20,6 +22,46 @@ This sections lists models trained using `icefall`_.
 English
 ^^^^^^^
 
+.. _icefall-asr-librispeech-streaming-zipformer-2023-05-17:
+
+icefall-asr-librispeech-streaming-zipformer-2023-05-17
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+  # This model is trained using LibriSpeech with zipformer transducer
+  #
+  # See https://github.com/k2-fsa/icefall/pull/1058
+  #
+  # normal-scaled model, number of model parameters: 66110931, i.e., 66.11 M
+  #
+  GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/Zengwei/icefall-asr-librispeech-streaming-zipformer-2023-05-17
+  cd icefall-asr-librispeech-streaming-zipformer-2023-05-17
+
+  git lfs pull --include "exp/jit_script_chunk_16_left_128.pt"
+
+  for m in greedy_search modified_beam_search fast_beam_search; do
+    sherpa-online \
+      --decoding-method=$m \
+      --nn-model=./exp/jit_script_chunk_16_left_128.pt \
+      --tokens=./data/lang_bpe_500/tokens.txt \
+      ./test_wavs/1089-134686-0001.wav \
+      ./test_wavs/1221-135766-0001.wav \
+      ./test_wavs/1221-135766-0002.wav
+  done
+
+  # For fast_beam_search with LG
+  sherpa-online \
+    --decoding-method=fast_beam_search \
+    --nn-model=./exp/jit_script_chunk_16_left_128.pt \
+    --lg=./data/lang_bpe_500/LG.pt \
+    --tokens=./data/lang_bpe_500/tokens.txt \
+    ./test_wavs/1089-134686-0001.wav \
+    ./test_wavs/1221-135766-0001.wav \
+    ./test_wavs/1221-135766-0002.wav
+
+.. _icefall-asr-librispeech-pruned-transducer-stateless7-streaming-2022-12-29:
+
 icefall-asr-librispeech-pruned-transducer-stateless7-streaming-2022-12-29
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,19 +74,14 @@ icefall-asr-librispeech-pruned-transducer-stateless7-streaming-2022-12-29
   GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/Zengwei/icefall-asr-librispeech-pruned-transducer-stateless7-streaming-2022-12-29
   cd icefall-asr-librispeech-pruned-transducer-stateless7-streaming-2022-12-29
 
-  git lfs pull --include "exp/encoder_jit_trace.pt"
-  git lfs pull --include "exp/decoder_jit_trace.pt"
-  git lfs pull --include "exp/joiner_jit_trace.pt"
+  git lfs pull --include "exp/cpu_jit.pt"
   git lfs pull --include "data/lang_bpe_500/LG.pt"
 
   for m in greedy_search modified_beam_search fast_beam_search; do
     sherpa-online \
       --decoding-method=$m \
-      --encoder-model=./exp/encoder_jit_trace.pt \
-      --decoder-model=./exp/decoder_jit_trace.pt \
-      --joiner-model=./exp/joiner_jit_trace.pt \
+      --nn-model=./exp/cpu_jit.pt \
       --tokens=./data/lang_bpe_500/tokens.txt \
-      --decode-chunk-size=32 \
       ./test_wavs/1089-134686-0001.wav \
       ./test_wavs/1221-135766-0001.wav \
       ./test_wavs/1221-135766-0002.wav
@@ -53,12 +90,9 @@ icefall-asr-librispeech-pruned-transducer-stateless7-streaming-2022-12-29
   # For fast_beam_search with LG
   sherpa-online \
     --decoding-method=fast_beam_search \
-    --encoder-model=./exp/encoder_jit_trace.pt \
-    --decoder-model=./exp/decoder_jit_trace.pt \
-    --joiner-model=./exp/joiner_jit_trace.pt \
+    --nn-model=./exp/cpu_jit.pt \
     --lg=./data/lang_bpe_500/LG.pt \
     --tokens=./data/lang_bpe_500/tokens.txt \
-    --decode-chunk-size=32 \
     ./test_wavs/1089-134686-0001.wav \
     ./test_wavs/1221-135766-0001.wav \
     ./test_wavs/1221-135766-0002.wav
@@ -283,17 +317,12 @@ It is a `streaming zipformer model <https://github.com/k2-fsa/icefall/tree/maste
   # This model supports both Chinese and English
   GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/pfluo/k2fsa-zipformer-chinese-english-mixed
   cd k2fsa-zipformer-chinese-english-mixed
-  git lfs pull --include "exp/encoder_jit_trace.pt"
-  git lfs pull --include "exp/decoder_jit_trace.pt"
-  git lfs pull --include "exp/joiner_jit_trace.pt"
+  git lfs pull --include "exp/cpu_jit.pt"
 
   for m in greedy_search modified_beam_search fast_beam_search; do
     sherpa-online \
       --decoding-method=$m \
-      --decode-chunk-size=32 \
-      --encoder-model=./exp/encoder_jit_trace.pt \
-      --decoder-model=./exp/decoder_jit_trace.pt \
-      --joiner-model=./exp/joiner_jit_trace.pt \
+      --nn-model=./exp/cpu_jit.pt \
       --tokens=./data/lang_char_bpe/tokens.txt \
       ./test_wavs/0.wav \
       ./test_wavs/1.wav \
