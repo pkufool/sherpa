@@ -21,7 +21,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Endpointing" href="../endpoint.html" />
+    <link rel="next" title="C API" href="../c-api/index.html" />
     <link rel="prev" title="Embedded Linux (riscv64)" href="../install/riscv64-embedded-linux.html" /> 
 </head>
 
@@ -43,20 +43,17 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">For Python users</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../python/huggingface/index.html">Try sherpa with Huggingface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/installation/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/streaming_asr/index.html">Streaming ASR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/offline_asr/index.html">Non-streaming speech recognition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/faq.html">Frequently asked questions</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../social-groups.html">Social groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">Run Next-gen Kaldi in your browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pretrained-models.html">Pre-trained models</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">For C++ users</span></p>
+<p class="caption" role="heading"><span class="caption-text">k2-fsa/sherpa</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../cpp/installation/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpp/pretrained_models/index.html">Pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sherpa/index.html">sherpa</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">ncnn</span></p>
+<p class="caption" role="heading"><span class="caption-text">k2-fsa/sherpa-ncnn</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">sherpa-ncnn</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
@@ -81,6 +78,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#recognize-a-file">Recognize a file</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api/index.html">C API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../endpoint.html">Endpointing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android/index.html">Android</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ios/index.html">iOS</a></li>
@@ -90,17 +88,13 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">onnx</span></p>
+<p class="caption" role="heading"><span class="caption-text">k2-fsa/sherpa-onnx</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">sherpa-onnx</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Triton</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../triton/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../triton/installation/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../triton/server/index.html">Triton-server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../triton/client/index.html">Triton-client</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../triton/perf/index.html">Perf Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triton/overview.html">Triton</a></li>
 </ul>
 
         </div>
@@ -286,7 +280,7 @@ code below.</p>
 </div></blockquote>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 17 </span><span class="caption-text">Real-time speech recognition with a microphone using <a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn">sherpa-ncnn</a> Python API</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Real-time speech recognition with a microphone using <a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn">sherpa-ncnn</a> Python API</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">try</span><span class="p">:</span>
@@ -527,7 +521,7 @@ encoded.</p>
 </div></blockquote>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 18 </span><span class="caption-text">Decode a file with <a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn">sherpa-ncnn</a> Python API</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Decode a file with <a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn">sherpa-ncnn</a> Python API</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wave</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -608,7 +602,7 @@ and joiner.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../install/riscv64-embedded-linux.html" class="btn btn-neutral float-left" title="Embedded Linux (riscv64)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../endpoint.html" class="btn btn-neutral float-right" title="Endpointing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../c-api/index.html" class="btn btn-neutral float-right" title="C API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
