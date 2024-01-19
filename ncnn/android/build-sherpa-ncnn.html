@@ -224,6 +224,7 @@ Android ABIs:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">arm64-v8a</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">armeabi-v7a</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x86_64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x86</span></code></p></li>
 </ul>
 </div></blockquote>
 <div class="admonition caution">
@@ -240,6 +241,14 @@ you can download pre-compiled shared libraries for this section by visiting</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn/releases">https://github.com/k2-fsa/sherpa-ncnn/releases</a></p>
 </div></blockquote>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We provide a colab notebook
+<a class="reference external" href="https://github.com/k2-fsa/colab/blob/master/sherpa-ncnn/build_sherpa_ncnn_for_android.ipynb"><img alt="build sherpa-ncnn for android colab notebook" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+for you to try this section step by step.</p>
+<p>If you are using Windows or you don’t want to setup your local environment
+to build the C++ libraries, please use the above colab notebook.</p>
 </div>
 <section id="build-for-arm64-v8a">
 <h3>Build for arm64-v8a<a class="headerlink" href="#build-for-arm64-v8a" title="Permalink to this headline"></a></h3>
@@ -320,6 +329,13 @@ for details.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/so-libs-for-x86-64.png"><img alt="Generated shared libraries for x86_64" src="../../_images/so-libs-for-x86-64.png" style="width: 600px;" /></a>
 </figure>
+</section>
+<section id="build-for-x86">
+<h3>Build for x86<a class="headerlink" href="#build-for-x86" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sherpa-ncnn<span class="w"> </span><span class="c1"># Go to the root repo</span>
+./build-android-x86.sh
+</pre></div>
+</div>
 </section>
 </section>
 <section id="download-pre-trained-models">
@@ -431,7 +447,7 @@ APKs: <a class="reference internal" href="demo-videos.html#sherpa-ncnn-android-v
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, sherpa development team.</p>
+    <p>&#169; Copyright 2022-2023, sherpa development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

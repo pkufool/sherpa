@@ -118,6 +118,39 @@
              
   <section id="build-sherpa-onnx-for-android">
 <span id="sherpa-onnx-install-android-studio"></span><h1>Build sherpa-onnx for Android<a class="headerlink" href="#build-sherpa-onnx-for-android" title="Permalink to this headline"></a></h1>
+<p>You can use this section for both <code class="docutils literal notranslate"><span class="pre">speech-to-text</span></code> (STT, ASR)
+and <code class="docutils literal notranslate"><span class="pre">text-to-speech</span></code> (TTS).</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The build scripts mentioned in this section run on both Linux and macOS.</p>
+<p>If you are using Windows or if you don’t want to build the shared libraries,
+you can download pre-built shared libraries by visiting the release page
+<a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/releases/">https://github.com/k2-fsa/sherpa-onnx/releases/</a></p>
+<p>For instance, for the relase <code class="docutils literal notranslate"><span class="pre">v1.9.0</span></code>, you can visit
+<a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/releases/tag/v1.9.0">https://github.com/k2-fsa/sherpa-onnx/releases/tag/v1.9.0</a>
+and download the file <code class="docutils literal notranslate"><span class="pre">sherpa-onnx-v1.9.0-android.tar.bz2</span></code>
+using the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.9.0/sherpa-onnx-v1.9.0-android.tar.bz2
+</pre></div>
+</div>
+</div></blockquote>
+<p>Please always use the latest release.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This section is originally written for speech-to-text. However, it is
+also applicable to other folders in <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/tree/master/android">https://github.com/k2-fsa/sherpa-onnx/tree/master/android</a>.</p>
+<p>For instance, you can replace <code class="docutils literal notranslate"><span class="pre">SherpaOnnx</span></code> in this section with</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SherpaOnnx2Pass</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SherpaOnnxTts</span></code>  (this is for text-to-speech)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SherpaOnnxVad</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SherpaOnnxVadAsr</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
 <section id="install-android-studio">
 <h2>Install Android Studio<a class="headerlink" href="#install-android-studio" title="Permalink to this headline"></a></h2>
 <p>The first step is to download and install Android Studio.</p>
@@ -142,37 +175,37 @@ the default settings of Android Studio during installation.</p>
 <h2>Install NDK<a class="headerlink" href="#install-ndk" title="Permalink to this headline"></a></h2>
 <p>Step 1, start Android Studio.</p>
 <blockquote>
-<div><figure class="align-default" id="id1">
+<div><figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/start-android-studio1.png"><img alt="Start Android Studio" src="../../_images/start-android-studio1.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Step 1: Click <code class="docutils literal notranslate"><span class="pre">Open</span></code> to select <code class="docutils literal notranslate"><span class="pre">sherpa-onnx/android/SherpaOnnx</span></code></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Step 1: Click <code class="docutils literal notranslate"><span class="pre">Open</span></code> to select <code class="docutils literal notranslate"><span class="pre">sherpa-onnx/android/SherpaOnnx</span></code></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 <p>Step 2, Open <code class="docutils literal notranslate"><span class="pre">sherpa-onnx/android/SherpaOnnx</span></code>.</p>
 <blockquote>
-<div><figure class="align-default" id="id2">
+<div><figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="../../_images/open-sherpa-onnx.png"><img alt="Open SherpaOnnx" src="../../_images/open-sherpa-onnx.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Step 2: Open <code class="docutils literal notranslate"><span class="pre">SherpaOnnx</span></code>.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Step 2: Open <code class="docutils literal notranslate"><span class="pre">SherpaOnnx</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 <p>Step 3, Select <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">SDK</span> <span class="pre">Manager</span></code>.</p>
 <blockquote>
-<div><figure class="align-default" id="id3">
+<div><figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="../../_images/select-sdk-manager1.png"><img alt="Select Tools -&gt; SDK Manager" src="../../_images/select-sdk-manager1.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Step 3: Select <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">SDK</span> <span class="pre">Manager</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Step 3: Select <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">SDK</span> <span class="pre">Manager</span></code>.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 <p>Step 4, <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">NDK</span></code>.</p>
 <blockquote>
-<div><figure class="align-default" id="id4">
+<div><figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="../../_images/ndk-tools1.png"><img alt="Install NDK" src="../../_images/ndk-tools1.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Step 4: Install NDK.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Step 4: Install NDK.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -220,6 +253,7 @@ Android ABIs:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">arm64-v8a</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">armv7-eabi</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x86_64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x86</span></code></p></li>
 </ul>
 </div></blockquote>
 <div class="admonition caution">
@@ -227,6 +261,23 @@ Android ABIs:</p>
 <p>You only need to select one and only one ABI. <code class="docutils literal notranslate"><span class="pre">arm64-v8a</span></code> is probably the
 most common one.</p>
 <p>If you want to test the app on an emulator, you probably need <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Building scripts for this section are for macOS and Linux. If you are
+using Windows or if you don’t want to build the shared libraries by yourself,
+you can download pre-compiled shared libraries for this section by visiting</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/releases">https://github.com/k2-fsa/sherpa-onnx/releases</a></p>
+</div></blockquote>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We provide a colab notebook
+<a class="reference external" href="https://github.com/k2-fsa/colab/blob/master/sherpa-onnx/build_sherpa_onnx_for_android.ipynb"><img alt="build sherpa-onnx for android colab notebook" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+for you to try this section step by step.</p>
+<p>If you are using Windows or you don’t want to setup your local environment
+to build the C++ libraries, please use the above colab notebook.</p>
 </div>
 <section id="build-for-arm64-v8a">
 <h3>Build for arm64-v8a<a class="headerlink" href="#build-for-arm64-v8a" title="Permalink to this headline"></a></h3>
@@ -251,6 +302,12 @@ most common one.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/so-libs-for-arm64-v8a1.png"><img alt="Generated shared libraries for arm64-v8a" src="../../_images/so-libs-for-arm64-v8a1.png" style="width: 600px;" /></a>
 </figure>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You may see more files than it is shown in the screenshot. That is totally fine
+since we are extending <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>. The first thing to remember is to always
+use the wildcard <code class="docutils literal notranslate"><span class="pre">lib*.so</span></code> in the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command.</p>
+</div>
 </section>
 <section id="build-for-armv7-eabi">
 <h3>Build for armv7-eabi<a class="headerlink" href="#build-for-armv7-eabi" title="Permalink to this headline"></a></h3>
@@ -300,6 +357,13 @@ most common one.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/so-libs-for-x86-641.png"><img alt="Generated shared libraries for x86_64" src="../../_images/so-libs-for-x86-641.png" style="width: 600px;" /></a>
 </figure>
+</section>
+<section id="build-for-x86">
+<h3>Build for x86<a class="headerlink" href="#build-for-x86" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sherpa-onnx<span class="w"> </span><span class="c1"># Go to the root repo</span>
+./build-android-x86.sh
+</pre></div>
+</div>
 </section>
 </section>
 <section id="download-pre-trained-models">
@@ -396,6 +460,9 @@ size of the library is somewhat a bit larger.</p>
 </div></blockquote>
 <p>Please refer to <a class="reference external" href="https://onnxruntime.ai/docs/build/custom.html">https://onnxruntime.ai/docs/build/custom.html</a> for a
 custom build to reduce the file size of <code class="docutils literal notranslate"><span class="pre">libonnxruntime.so</span></code>.</p>
+<p>Note that we are constantly updating the version of <code class="docutils literal notranslate"><span class="pre">onnxruntime</span></code>. By
+the time you are reading this section, we may be using the latest version
+of <code class="docutils literal notranslate"><span class="pre">onnxruntime</span></code>.</p>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -417,7 +484,7 @@ custom build to reduce the file size of <code class="docutils literal notranslat
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, sherpa development team.</p>
+    <p>&#169; Copyright 2022-2023, sherpa development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

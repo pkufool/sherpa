@@ -134,10 +134,8 @@ deploy it with <a class="reference external" href="https://github.com/k2-fsa/she
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/marcoyang/sherpa-ncnn-lstm-transducer-small-2023-02-13
-
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-lstm-transducer-small-2023-02-13
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-lstm-transducer-small-2023-02-13.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-lstm-transducer-small-2023-02-13.tar.bz2
 </pre></div>
 </div>
 <div class="admonition note">
@@ -196,28 +194,8 @@ is trained.</p>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/csukuangfj/sherpa-ncnn-2022-09-05
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-2022-09-05
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># before running `git lfs pull`</span>
-
-sherpa-ncnn-2022-09-05<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>131B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>134B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
-
-sherpa-ncnn-2022-09-05<span class="w"> </span>fangjun$<span class="w"> </span>git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-
-<span class="c1"># after running `git lfs pull`</span>
-
-sherpa-ncnn-2022-09-05<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>502K<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>159M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:13<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">1</span>.5M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-2022-09-05.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-2022-09-05.tar.bz2
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -306,28 +284,8 @@ is trained.</p>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/csukuangfj/sherpa-ncnn-2022-09-30
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-2022-09-30
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># before running `git lfs pull`</span>
-
-sherpa-ncnn-2022-09-30<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:30<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>134B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:30<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:30<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
-
-sherpa-ncnn-2022-09-30<span class="w"> </span>fangjun$<span class="w"> </span>git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-
-<span class="c1"># after running `git lfs pull`</span>
-
-sherpa-ncnn-2022-09-30<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">5</span>.4M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:30<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>159M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:31<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span>.4M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:30<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-2022-09-30.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-2022-09-30.tar.bz2
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -426,7 +384,7 @@ Recognition result for ./sherpa-ncnn-2022-09-30/test_wavs/0.wav
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, sherpa development team.</p>
+    <p>&#169; Copyright 2022-2023, sherpa development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

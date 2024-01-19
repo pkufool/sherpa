@@ -134,19 +134,8 @@ so it supports only Chinese.</p>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/marcoyang/sherpa-ncnn-streaming-zipformer-zh-14M-2023-02-23
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-zh-14M-2023-02-23
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>After downloading, please check the file sizes of the models. You should see the following
-output after .</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># after running `git lfs pull`</span>
-$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
-
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>yangxiaoyu<span class="w"> </span>root<span class="w"> </span><span class="m">3</span>.4M<span class="w"> </span>Feb<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">22</span>:21<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>yangxiaoyu<span class="w"> </span>root<span class="w">  </span>17M<span class="w"> </span>Feb<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">22</span>:21<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>yangxiaoyu<span class="w"> </span>root<span class="w"> </span><span class="m">3</span>.7M<span class="w"> </span>Feb<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">22</span>:21<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-streaming-zipformer-zh-14M-2023-02-23.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-streaming-zipformer-zh-14M-2023-02-23.tar.bz2
 </pre></div>
 </div>
 </section>
@@ -267,19 +256,8 @@ The word-error-rates(%) on <code class="docutils literal notranslate"><span clas
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/marcoyang/sherpa-ncnn-streaming-zipformer-20M-2023-02-17
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-20M-2023-02-17
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>After downloading, please check the file sizes of the models. You should see the following
-output after .</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># after running `git lfs pull`</span>
-$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
-
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>yangxiaoyu<span class="w"> </span>root<span class="w"> </span>509K<span class="w"> </span>Feb<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>yangxiaoyu<span class="w"> </span>root<span class="w">  </span>38M<span class="w"> </span>Feb<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>yangxiaoyu<span class="w"> </span>root<span class="w"> </span><span class="m">1</span>.3M<span class="w"> </span>Feb<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-streaming-zipformer-20M-2023-02-17.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-streaming-zipformer-20M-2023-02-17.tar.bz2
 </pre></div>
 </div>
 </section>
@@ -364,31 +342,8 @@ microphone if <code class="docutils literal notranslate"><span class="pre">sherp
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/csukuangfj/sherpa-ncnn-streaming-zipformer-en-2023-02-13
-
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-en-2023-02-13
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># before running `git lfs pull`</span>
-
-sherpa-ncnn-streaming-zipformer-en-2023-02-13<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
-
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>131B<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">11</span>:51<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>134B<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">11</span>:51<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132B<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">11</span>:51<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
-
-sherpa-ncnn-streaming-zipformer-en-2023-02-13<span class="w"> </span>fangjun$<span class="w"> </span>git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-
-<span class="c1"># after running `git lfs pull`</span>
-
-sherpa-ncnn-streaming-zipformer-en-2023-02-13<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
-
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>508K<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">22</span>:19<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132M<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">22</span>:19<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">1</span>.4M<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">22</span>:19<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-streaming-zipformer-en-2023-02-13.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-streaming-zipformer-en-2023-02-13.tar.bz2
 </pre></div>
 </div>
 </section>
@@ -480,18 +435,8 @@ and is trained on tens of thousands of some internal dataset.</p>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/csukuangfj/sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
-
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span>.1M<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">10</span>:08<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>121M<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">10</span>:09<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">7</span>.0M<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">10</span>:08<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-streaming-zipformer-bilingual-zh-en-2023-02-13.tar.bz2
 </pre></div>
 </div>
 </section>
@@ -598,28 +543,8 @@ model is much smaller.</p>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/csukuangfj/sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># before running `git lfs pull`</span>
-
-sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:18<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>133B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:18<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>132B<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:18<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
-
-sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16<span class="w"> </span>fangjun$<span class="w"> </span>git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-
-<span class="c1"># after running `git lfs pull`</span>
-
-sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span>.1M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:18<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">    </span>37M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:19<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span>.9M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:18<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2
 </pre></div>
 </div>
 </section>
@@ -704,22 +629,12 @@ microphone if <code class="docutils literal notranslate"><span class="pre">sherp
 <p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16/blob/main/96/export-for-ncnn-bilingual-small.sh">https://huggingface.co/csukuangfj/sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16/blob/main/96/export-for-ncnn-bilingual-small.sh</a></p>
 <p>if you are interested.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also find a third version with folder <code class="docutils literal notranslate"><span class="pre">64</span></code>.</p>
+</div>
 <p>The advantage of using this model is that it runs much faster, while the downside
 is that you will see some delay before you see the recognition result after you speak.</p>
-<p>In the following, we describe how to download it.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16
-<span class="nb">cd</span><span class="w"> </span><span class="m">96</span>/
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>After downloading, please check the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sherpa-ncnn-streaming-zipformer-small-bilingual-zh-en-2023-02-16<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span><span class="m">96</span>/*.bin
-
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span>.1M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">14</span>:39<span class="w"> </span><span class="m">96</span>/decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">    </span>38M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">14</span>:39<span class="w"> </span><span class="m">96</span>/encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span>.9M<span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">14</span>:39<span class="w"> </span><span class="m">96</span>/joiner_jit_trace-pnnx.ncnn.bin
-</pre></div>
-</div>
 <p>To decode a file, please use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
@@ -751,18 +666,8 @@ In the following, we describe how to download it and use it with <a class="refer
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-ncnn
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/shaojieli/sherpa-ncnn-streaming-zipformer-fr-2023-04-14
-<span class="nb">cd</span><span class="w"> </span>sherpa-ncnn-streaming-zipformer-fr-2023-04-14
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.bin&quot;</span>
-</pre></div>
-</div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.bin</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sherpa-ncnn-streaming-zipformer-fr-2023-04-14<span class="w"> </span>shaojieli$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.bin
-
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lishaojie<span class="w"> </span>Students<span class="w"> </span>509K<span class="w"> </span>4月<span class="w">  </span><span class="m">12</span><span class="w"> </span><span class="m">13</span>:37<span class="w"> </span>decoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lishaojie<span class="w"> </span>Students<span class="w"> </span>133M<span class="w"> </span>4月<span class="w">  </span><span class="m">12</span><span class="w"> </span><span class="m">13</span>:37<span class="w"> </span>encoder_jit_trace-pnnx.ncnn.bin
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lishaojie<span class="w"> </span>Students<span class="w"> </span><span class="m">1</span>.4M<span class="w"> </span>4月<span class="w">  </span><span class="m">12</span><span class="w"> </span><span class="m">13</span>:37<span class="w"> </span>joiner_jit_trace-pnnx.ncnn.bin
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-ncnn/releases/download/models/sherpa-ncnn-streaming-zipformer-fr-2023-04-14.tar.bz2
+tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-streaming-zipformer-fr-2023-04-14.tar.bz2
 </pre></div>
 </div>
 <p>To decode a file, please use:</p>
@@ -847,7 +752,7 @@ microphone if <code class="docutils literal notranslate"><span class="pre">sherp
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, sherpa development team.</p>
+    <p>&#169; Copyright 2022-2023, sherpa development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -71,6 +71,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pre-trained models</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../online-transducer/index.html">Online transducer models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../online-paraformer/index.html">Online paraformer models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../online-ctc/index.html">Online CTC models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../offline-transducer/index.html">Offline transducer models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../offline-paraformer/index.html">Offline paraformer models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../offline-ctc/index.html">Offline CTC models</a></li>
@@ -81,6 +82,7 @@
 <li class="toctree-l4"><a class="reference internal" href="huggingface.html">Huggingface space</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../wenet/index.html">WeNet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../small-online-models.html">Small models</a></li>
 </ul>
 </li>
@@ -145,8 +147,26 @@ from the following huggingface repositories:</p>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">small.en</span></code></p></td>
 <td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small.en">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small.en</a></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">medium.en</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distil-small.en</span></code></p></td>
+<td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-distil-small.en">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-distil-small.en</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">medium.en</span></code></p></td>
 <td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-medium.en">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-medium.en</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">distil-medium.en</span></code></p></td>
+<td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-distil-medium.en">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-distil-medium.en</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tiny</span></code></p></td>
+<td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-tiny">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-tiny</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">base</span></code></p></td>
+<td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-base">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-base</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">small</span></code></p></td>
+<td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></td>
+<td><p><a class="reference external" href="https://huggingface.co/csukuangfj/sherpa-onnx-whisper-medium">https://huggingface.co/csukuangfj/sherpa-onnx-whisper-medium</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -258,7 +278,7 @@ python3<span class="w"> </span>./test.py<span class="w"> </span><span class="se"
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, sherpa development team.</p>
+    <p>&#169; Copyright 2022-2023, sherpa development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -20,7 +20,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Frequently Asked Question (FAQs)" href="../faq.html" />
+    <link rel="next" title="Piper" href="../piper.html" />
     <link rel="prev" title="Pre-trained models" href="index.html" /> 
 </head>
 
@@ -75,6 +75,8 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">vits</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../piper.html">Piper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mms.html">MMS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html">Frequently Asked Question (FAQs)</a></li>
 </ul>
 </li>
@@ -119,6 +121,14 @@
 <section id="all-models-in-a-single-table">
 <h2>All models in a single table<a class="headerlink" href="#all-models-in-a-single-table" title="Permalink to this headline"></a></h2>
 <p>The following table summarizes the information of all models in this page.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since there are more than <code class="docutils literal notranslate"><span class="pre">100</span></code> pre-trained models for over <code class="docutils literal notranslate"><span class="pre">40</span></code> languages,
+we don’t list all of them on this page. Please find them at
+<a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models">https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models</a>.</p>
+<p>You can try all the models at the following huggingface space.
+<a class="reference external" href="https://huggingface.co/spaces/k2-fsa/text-to-speech">https://huggingface.co/spaces/k2-fsa/text-to-speech</a>.</p>
+</div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>You can find Android APKs for each model at the following page</p>
@@ -1012,9 +1022,7 @@ sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
 </table></section>
 <section id="en-us-lessac-medium-english-single-speaker">
 <span id="vits-model-en-us-lessac-medium"></span><h2>en_US-lessac-medium (English, single-speaker)<a class="headerlink" href="#en-us-lessac-medium-english-single-speaker" title="Permalink to this headline"></a></h2>
-<p>This model is converted from <a class="reference external" href="https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium">https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium</a>.
-You can find the colab notebook for the conversion at the following
-address <a class="reference external" href="https://github.com/k2-fsa/colab/blob/master/sherpa-onnx/piper/convert_de_DE_thorsten_medium.ipynb">https://github.com/k2-fsa/colab/blob/master/sherpa-onnx/piper/convert_de_DE_thorsten_medium.ipynb</a></p>
+<p>This model is converted from <a class="reference external" href="https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium">https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium</a>.</p>
 <p>The dataset used to train the model is <a class="reference external" href="https://www.cstr.ed.ac.uk/projects/blizzard/2013/lessac_blizzard2013/">lessac_blizzard2013</a>.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -1026,17 +1034,14 @@ address <a class="reference external" href="https://github.com/k2-fsa/colab/blob
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
-<span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/csukuangfj/vits-piper-en_US-lessac-medium
-<span class="nb">cd</span><span class="w"> </span>vits-piper-en_US-lessac-medium
-git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.onnx&quot;</span>
+wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_US-lessac-medium.tar.bz2
+tar<span class="w"> </span>xf<span class="w"> </span>vits-piper-en_US-lessac-medium.tar.bz2
 </pre></div>
 </div>
-<p>Please check that the file sizes of the pre-trained models are correct. See
-the file sizes of <code class="docutils literal notranslate"><span class="pre">*.onnx</span></code> files below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vits-piper-en_US-lessac-medium<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>*.onnx
-
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w"> </span>staff<span class="w"> </span>61M<span class="w"> </span>Oct<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">05</span>:21<span class="w"> </span>en_US-lessac-medium.onnx
-</pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can find a lot of pre-trained models for over 40 languages at
+<cite>&lt;https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models&gt;</cite>.</p>
 </div>
 </section>
 <section id="id9">
@@ -1045,11 +1050,28 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 
 ./build/bin/sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--vits-model<span class="o">=</span>./vits-piper-en_US-lessac-medium/en_US-lessac-medium.onnx<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--vits-lexicon<span class="o">=</span>./vits-piper-en_US-lessac-medium/lexicon.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-data-dir<span class="o">=</span>./vits-piper-en_US-lessac-medium/espeak-ng-data<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--vits-tokens<span class="o">=</span>./vits-piper-en_US-lessac-medium/tokens.txt<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--output-filename<span class="o">=</span>./liliana-piper-en_US-lessac-medium.wav<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;liliana, the most beautiful and lovely assistant of our team!&#39;</span>
 </pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can also use</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
+
+./build/bin/sherpa-onnx-offline-tts-play<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-model<span class="o">=</span>./vits-piper-en_US-lessac-medium/en_US-lessac-medium.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-data-dir<span class="o">=</span>./vits-piper-en_US-lessac-medium/espeak-ng-data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-tokens<span class="o">=</span>./vits-piper-en_US-lessac-medium/tokens.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-filename<span class="o">=</span>./liliana-piper-en_US-lessac-medium.wav<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;liliana, the most beautiful and lovely assistant of our team!&#39;</span>
+</pre></div>
+</div>
+<p>which will play the audio as it is generating.</p>
+</div></blockquote>
 </div>
 <p>After running, it will generate a file <code class="docutils literal notranslate"><span class="pre">liliana-piper.wav</span></code> in the current directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>soxi<span class="w"> </span>./liliana-piper-en_US-lessac-medium.wav
@@ -1089,12 +1111,28 @@ Sample<span class="w"> </span>Encoding:<span class="w"> </span><span class="m">1
 
 python3<span class="w"> </span>./python-api-examples/offline-tts.py<span class="w"> </span><span class="se">\</span>
 <span class="w"> </span>--vits-model<span class="o">=</span>./vits-piper-en_US-lessac-medium/en_US-lessac-medium.onnx<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>--vits-lexicon<span class="o">=</span>./vits-piper-en_US-lessac-medium/lexicon.txt<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>--vits-data-dir<span class="o">=</span>./vits-piper-en_US-lessac-medium/espeak-ng-data<span class="w"> </span><span class="se">\</span>
 <span class="w"> </span>--vits-tokens<span class="o">=</span>./vits-piper-en_US-lessac-medium/tokens.txt<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>--output-filename<span class="o">=</span>./liliana-piper-en_US-lessac-medium.wav<span class="w"> </span><span class="se">\</span>
 <span class="w"> </span>--output-filename<span class="o">=</span>./armstrong-piper-en_US-lessac-medium.wav<span class="w"> </span><span class="se">\</span>
 <span class="w"> </span><span class="s2">&quot;That&#39;s one small step for a man, a giant leap for mankind.&quot;</span>
 </pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can also use</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
+
+python3<span class="w"> </span>./python-api-examples/offline-tts-play.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-model<span class="o">=</span>./vits-piper-en_US-lessac-medium/en_US-lessac-medium.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-data-dir<span class="o">=</span>./vits-piper-en_US-lessac-medium/espeak-ng-data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--vits-tokens<span class="o">=</span>./vits-piper-en_US-lessac-medium/tokens.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-filename<span class="o">=</span>./armstrong-piper-en_US-lessac-medium.wav<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;That&#39;s one small step for a man, a giant leap for mankind.&quot;</span>
+</pre></div>
+</div>
+<p>which will play the audio as it is generating.</p>
+</div></blockquote>
 </div>
 <p>After running, it will generate a file <code class="docutils literal notranslate"><span class="pre">armstrong-piper-en_US-lessac-medium.wav</span></code> in the current directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>soxi<span class="w"> </span>./armstrong-piper-en_US-lessac-medium.wav
@@ -1136,13 +1174,13 @@ Sample<span class="w"> </span>Encoding:<span class="w"> </span><span class="m">1
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Pre-trained models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../faq.html" class="btn btn-neutral float-right" title="Frequently Asked Question (FAQs)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../piper.html" class="btn btn-neutral float-right" title="Piper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, sherpa development team.</p>
+    <p>&#169; Copyright 2022-2023, sherpa development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
