@@ -16,6 +16,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -68,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pre-trained models</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../online-transducer/index.html">Online transducer models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../online-paraformer/index.html">Online paraformer models</a></li>
@@ -120,21 +122,21 @@
            <div itemprop="articleBody">
              
   <section id="zipformer-ctc-based-models">
-<span id="sherpa-onnx-zipformer-ctc-models"></span><h1>Zipformer-CTC-based Models<a class="headerlink" href="#zipformer-ctc-based-models" title="Permalink to this headline"></a></h1>
+<span id="sherpa-onnx-zipformer-ctc-models"></span><h1>Zipformer-CTC-based Models<a class="headerlink" href="#zipformer-ctc-based-models" title="Permalink to this heading"></a></h1>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Please refer to <a class="reference internal" href="../../install/index.html#install-sherpa-onnx"><span class="std std-ref">Installation</span></a> to install <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>
 before you read this section.</p>
 </div>
 <section id="sherpa-onnx-streaming-zipformer-ctc-multi-zh-hans-2023-12-13-chinese">
-<h2>sherpa-onnx-streaming-zipformer-ctc-multi-zh-hans-2023-12-13 (Chinese)<a class="headerlink" href="#sherpa-onnx-streaming-zipformer-ctc-multi-zh-hans-2023-12-13-chinese" title="Permalink to this headline"></a></h2>
+<h2>sherpa-onnx-streaming-zipformer-ctc-multi-zh-hans-2023-12-13 (Chinese)<a class="headerlink" href="#sherpa-onnx-streaming-zipformer-ctc-multi-zh-hans-2023-12-13-chinese" title="Permalink to this heading"></a></h2>
 <p>Training code for this model can be found at <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/1369">https://github.com/k2-fsa/icefall/pull/1369</a>.
 It supports only Chinese.</p>
 <p>Please refer to <a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/multi_zh-hans/ASR#included-training-sets">https://github.com/k2-fsa/icefall/tree/master/egs/multi_zh-hans/ASR#included-training-sets</a>
 for the detailed information about the training data. In total, there are 14k hours of training data.</p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="download-the-model">
-<h3>Download the model<a class="headerlink" href="#download-the-model" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#download-the-model" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-ctc-multi-zh-hans-2023-12-13.tar.bz2
@@ -156,14 +158,14 @@ drwxr-xr-x@ 8 fangjun  staff   256B Dec 13 16:19 test_wavs
 </div>
 </section>
 <section id="decode-a-single-wave-file">
-<h3>Decode a single wave file<a class="headerlink" href="#decode-a-single-wave-file" title="Permalink to this headline"></a></h3>
+<h3>Decode a single wave file<a class="headerlink" href="#decode-a-single-wave-file" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="fp32">
-<h4>fp32<a class="headerlink" href="#fp32" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#fp32" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode a wave file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -200,7 +202,7 @@ encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 </section>
 <section id="int8">
-<h4>int8<a class="headerlink" href="#int8" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#int8" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode a wave file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -238,7 +240,7 @@ encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </section>
 </section>
 <section id="real-time-speech-recognition-from-a-microphone">
-<h3>Real-time speech recognition from a microphone<a class="headerlink" href="#real-time-speech-recognition-from-a-microphone" title="Permalink to this headline"></a></h3>
+<h3>Real-time speech recognition from a microphone<a class="headerlink" href="#real-time-speech-recognition-from-a-microphone" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone<span class="w"> </span><span class="se">\</span>

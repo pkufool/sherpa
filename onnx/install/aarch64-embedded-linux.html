@@ -16,6 +16,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -81,6 +82,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pretrained_models/index.html">Pre-trained models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tts/index.html">Text-to-speech (TTS)</a></li>
 </ul>
@@ -118,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="embedded-linux-aarch64">
-<h1>Embedded Linux (aarch64)<a class="headerlink" href="#embedded-linux-aarch64" title="Permalink to this headline"></a></h1>
+<h1>Embedded Linux (aarch64)<a class="headerlink" href="#embedded-linux-aarch64" title="Permalink to this heading"></a></h1>
 <p>This page describes how to build <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a> for embedded Linux (aarch64, 64-bit)
 with cross-compiling on an x86 machine with Ubuntu OS.</p>
 <div class="admonition warning">
@@ -130,7 +132,7 @@ an <code class="docutils literal notranslate"><span class="pre">aarch64</span></
 please see <a class="reference internal" href="linux.html#install-sherpa-onnx-on-linux"><span class="std std-ref">Linux</span></a>.</p>
 </div>
 <section id="install-toolchain">
-<span id="sherpa-onnx-install-for-aarch64-embedded-linux"></span><h2>Install toolchain<a class="headerlink" href="#install-toolchain" title="Permalink to this headline"></a></h2>
+<span id="sherpa-onnx-install-for-aarch64-embedded-linux"></span><h2>Install toolchain<a class="headerlink" href="#install-toolchain" title="Permalink to this heading"></a></h2>
 <p>The first step is to install a toolchain for cross-compiling.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -168,7 +170,7 @@ run:</p>
 <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 </section>
 <section id="build-sherpa-onnx">
-<h2>Build sherpa-onnx<a class="headerlink" href="#build-sherpa-onnx" title="Permalink to this headline"></a></h2>
+<h2>Build sherpa-onnx<a class="headerlink" href="#build-sherpa-onnx" title="Permalink to this heading"></a></h2>
 <p>Finally, let us build <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx
 <span class="nb">cd</span><span class="w"> </span>sherpa-onnx
@@ -204,7 +206,7 @@ the microphone with <a class="reference external" href="https://en.wikipedia.org
 </div>
 </section>
 <section id="sherpa-onnx-alsa">
-<span id="id1"></span><h2>sherpa-onnx-alsa<a class="headerlink" href="#sherpa-onnx-alsa" title="Permalink to this headline"></a></h2>
+<span id="id1"></span><h2>sherpa-onnx-alsa<a class="headerlink" href="#sherpa-onnx-alsa" title="Permalink to this heading"></a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>We recommend that you use <code class="docutils literal notranslate"><span class="pre">sherpa-onnx-alsa</span></code> on embedded systems such
@@ -260,7 +262,7 @@ use <a class="reference internal" href="../pretrained_models/online-transducer/z
 if you have any problems.</p>
 </section>
 <section id="how-to-build-static-libraries-and-static-linked-binaries">
-<h2>How to build static libraries and static linked binaries<a class="headerlink" href="#how-to-build-static-libraries-and-static-linked-binaries" title="Permalink to this headline"></a></h2>
+<h2>How to build static libraries and static linked binaries<a class="headerlink" href="#how-to-build-static-libraries-and-static-linked-binaries" title="Permalink to this heading"></a></h2>
 <p>If you want to build static libraries and static linked binaries, please first
 download a cross compile toolchain with GCC &gt;= 9.0. The following is an example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/software

@@ -16,6 +16,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -68,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pretrained_models/index.html">Pre-trained models</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Text-to-speech (TTS)</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hf-space.html">Huggingface space</a></li>
@@ -120,7 +122,7 @@
            <div itemprop="articleBody">
              
   <section id="piper">
-<h1>Piper<a class="headerlink" href="#piper" title="Permalink to this headline"></a></h1>
+<h1>Piper<a class="headerlink" href="#piper" title="Permalink to this heading"></a></h1>
 <p>In this section, we describe how to convert <a class="reference external" href="https://github.com/rhasspy/piper">piper</a> pre-trained models
 from <a class="reference external" href="https://huggingface.co/rhasspy/piper-voices">https://huggingface.co/rhasspy/piper-voices</a>.</p>
 <div class="admonition hint">
@@ -139,7 +141,7 @@ learn how the conversion works, please read on.</p>
 share the same converting method, so we use an American English model in this
 section as an example.</p>
 <section id="install-dependencies">
-<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline"></a></h2>
+<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>onnx<span class="w"> </span>onnxruntime
 </pre></div>
 </div>
@@ -149,14 +151,14 @@ section as an example.</p>
 </div>
 </section>
 <section id="find-the-pre-trained-model-from-piper">
-<h2>Find the pre-trained model from piper<a class="headerlink" href="#find-the-pre-trained-model-from-piper" title="Permalink to this headline"></a></h2>
+<h2>Find the pre-trained model from piper<a class="headerlink" href="#find-the-pre-trained-model-from-piper" title="Permalink to this heading"></a></h2>
 <p>All American English models from <a class="reference external" href="https://github.com/rhasspy/piper">piper</a> can be found at
 <a class="reference external" href="https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US">https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US</a>.</p>
 <p>We use <a class="reference external" href="https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/amy/low">https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/amy/low</a> as
 an example in this section.</p>
 </section>
 <section id="download-the-pre-trained-model">
-<h2>Download the pre-trained model<a class="headerlink" href="#download-the-pre-trained-model" title="Permalink to this headline"></a></h2>
+<h2>Download the pre-trained model<a class="headerlink" href="#download-the-pre-trained-model" title="Permalink to this heading"></a></h2>
 <p>We need to download two files for each model:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/amy/low/en_US-amy-low.onnx
 wget<span class="w"> </span>https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/amy/low/en_US-amy-low.onnx.json
@@ -164,7 +166,7 @@ wget<span class="w"> </span>https://huggingface.co/rhasspy/piper-voices/resolve/
 </div>
 </section>
 <section id="add-meta-data-to-the-onnx-model">
-<h2>Add meta data to the onnx model<a class="headerlink" href="#add-meta-data-to-the-onnx-model" title="Permalink to this headline"></a></h2>
+<h2>Add meta data to the onnx model<a class="headerlink" href="#add-meta-data-to-the-onnx-model" title="Permalink to this heading"></a></h2>
 <p>Please use the following code to add meta data to the downloaded onnx model.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
@@ -241,7 +243,7 @@ meta data and it also generates a new file <code class="docutils literal notrans
 <p>From now on, you don’t need the config json file <code class="docutils literal notranslate"><span class="pre">en_US-amy-low.onnx.json</span></code> any longer.</p>
 </section>
 <section id="download-espeak-ng-data">
-<h2>Download espeak-ng-data<a class="headerlink" href="#download-espeak-ng-data" title="Permalink to this headline"></a></h2>
+<h2>Download espeak-ng-data<a class="headerlink" href="#download-espeak-ng-data" title="Permalink to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/espeak-ng-data.tar.bz2
 tar<span class="w"> </span>xf<span class="w"> </span>espeak-ng-data.tar.bz2
 </pre></div>
@@ -250,7 +252,7 @@ tar<span class="w"> </span>xf<span class="w"> </span>espeak-ng-data.tar.bz2
 which language your are using for your model.</p>
 </section>
 <section id="test-your-converted-model">
-<h2>Test your converted model<a class="headerlink" href="#test-your-converted-model" title="Permalink to this headline"></a></h2>
+<h2>Test your converted model<a class="headerlink" href="#test-your-converted-model" title="Permalink to this heading"></a></h2>
 <p>To have a quick test of your converted model, you can use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sherpa-onnx
 </pre></div>

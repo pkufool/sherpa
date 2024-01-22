@@ -16,6 +16,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -114,14 +115,14 @@
            <div itemprop="articleBody">
              
   <section id="lstm-transducer-based-models">
-<h1>LSTM-transducer-based Models<a class="headerlink" href="#lstm-transducer-based-models" title="Permalink to this headline"></a></h1>
+<h1>LSTM-transducer-based Models<a class="headerlink" href="#lstm-transducer-based-models" title="Permalink to this heading"></a></h1>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Please refer to <a class="reference internal" href="../install/index.html#install-sherpa-ncnn"><span class="std std-ref">Installation</span></a> to install <a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn">sherpa-ncnn</a>
 before you read this section.</p>
 </div>
 <section id="marcoyang-sherpa-ncnn-lstm-transducer-small-2023-02-13-bilingual-chinese-english">
-<span id="marcoyang-sherpa-ncnn-lstm-transducer-small-2023-02-13-bilingual"></span><h2>marcoyang/sherpa-ncnn-lstm-transducer-small-2023-02-13 (Bilingual, Chinese + English)<a class="headerlink" href="#marcoyang-sherpa-ncnn-lstm-transducer-small-2023-02-13-bilingual-chinese-english" title="Permalink to this headline"></a></h2>
+<span id="marcoyang-sherpa-ncnn-lstm-transducer-small-2023-02-13-bilingual"></span><h2>marcoyang/sherpa-ncnn-lstm-transducer-small-2023-02-13 (Bilingual, Chinese + English)<a class="headerlink" href="#marcoyang-sherpa-ncnn-lstm-transducer-small-2023-02-13-bilingual-chinese-english" title="Permalink to this heading"></a></h2>
 <p>This model is a small version of <a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/lstm_transducer_stateless3">lstm-transducer</a>
 trained in <a class="reference external" href="https://github.com/k2-fsa/icefall">icefall</a>.</p>
 <p>It only has <code class="docutils literal notranslate"><span class="pre">13.3</span> <span class="pre">million</span> <span class="pre">parameters</span></code> and can be deployed on <code class="docutils literal notranslate"><span class="pre">embedded</span> <span class="pre">devices</span></code>
@@ -144,7 +145,7 @@ tar<span class="w"> </span>xvf<span class="w"> </span>sherpa-ncnn-lstm-transduce
 compile <a class="reference external" href="https://github.com/k2-fsa/sherpa-ncnn">sherpa-ncnn</a> for a 32-bit ARM platform.</p>
 </div>
 <section id="decode-a-single-wave-file-with-build-bin-sherpa-ncnn">
-<h3>Decode a single wave file with ./build/bin/sherpa-ncnn<a class="headerlink" href="#decode-a-single-wave-file-with-build-bin-sherpa-ncnn" title="Permalink to this headline"></a></h3>
+<h3>Decode a single wave file with ./build/bin/sherpa-ncnn<a class="headerlink" href="#decode-a-single-wave-file-with-build-bin-sherpa-ncnn" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files with a single channel and the sampling rate
@@ -184,7 +185,7 @@ should be 16 kHz.</p>
 </section>
 </section>
 <section id="csukuangfj-sherpa-ncnn-2022-09-05-english">
-<h2>csukuangfj/sherpa-ncnn-2022-09-05 (English)<a class="headerlink" href="#csukuangfj-sherpa-ncnn-2022-09-05-english" title="Permalink to this headline"></a></h2>
+<h2>csukuangfj/sherpa-ncnn-2022-09-05 (English)<a class="headerlink" href="#csukuangfj-sherpa-ncnn-2022-09-05-english" title="Permalink to this heading"></a></h2>
 <p>This is a model trained using the <a class="reference external" href="https://github.com/SpeechColab/GigaSpeech">GigaSpeech</a> and the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> dataset.</p>
 <p>Please see <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/558">https://github.com/k2-fsa/icefall/pull/558</a> for how the model
 is trained.</p>
@@ -276,7 +277,7 @@ Recognition result for ./sherpa-ncnn-2022-09-05/test_wavs/1089-134686-0001.wav
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/m6ynSxycpX0" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></section>
 <section id="csukuangfj-sherpa-ncnn-2022-09-30-chinese">
-<h2>csukuangfj/sherpa-ncnn-2022-09-30 (Chinese)<a class="headerlink" href="#csukuangfj-sherpa-ncnn-2022-09-30-chinese" title="Permalink to this headline"></a></h2>
+<h2>csukuangfj/sherpa-ncnn-2022-09-30 (Chinese)<a class="headerlink" href="#csukuangfj-sherpa-ncnn-2022-09-30-chinese" title="Permalink to this heading"></a></h2>
 <p>This is a model trained using the <a class="reference external" href="https://github.com/wenet-e2e/WenetSpeech">WenetSpeech</a> dataset.</p>
 <p>Please see <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/595">https://github.com/k2-fsa/icefall/pull/595</a> for how the model
 is trained.</p>

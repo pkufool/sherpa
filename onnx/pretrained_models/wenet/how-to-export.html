@@ -16,6 +16,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -68,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pre-trained models</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../online-transducer/index.html">Online transducer models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../online-paraformer/index.html">Online paraformer models</a></li>
@@ -121,7 +123,7 @@
            <div itemprop="articleBody">
              
   <section id="how-to-export-models-from-wenet-to-sherpa-onnx">
-<h1>How to export models from WeNet to sherpa-onnx<a class="headerlink" href="#how-to-export-models-from-wenet-to-sherpa-onnx" title="Permalink to this headline"></a></h1>
+<h1>How to export models from WeNet to sherpa-onnx<a class="headerlink" href="#how-to-export-models-from-wenet-to-sherpa-onnx" title="Permalink to this heading"></a></h1>
 <p>Suppose you have the following files from <a class="reference external" href="https://github.com/wenet-e2e/wenet">WeNet</a>:</p>
 <blockquote>
 <div><ul class="simple">
@@ -137,7 +139,7 @@
 <p>Both streaming and non-streaming models are supported.</p>
 </div>
 <section id="export-for-non-streaming-inference">
-<h2>Export for non-streaming inference<a class="headerlink" href="#export-for-non-streaming-inference" title="Permalink to this headline"></a></h2>
+<h2>Export for non-streaming inference<a class="headerlink" href="#export-for-non-streaming-inference" title="Permalink to this heading"></a></h2>
 <p>You can use the following script</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/blob/master/scripts/wenet/export-onnx.py">https://github.com/k2-fsa/sherpa-onnx/blob/master/scripts/wenet/export-onnx.py</a></p>
@@ -169,7 +171,7 @@
 </div>
 </section>
 <section id="export-for-streaming-inference">
-<h2>Export for streaming inference<a class="headerlink" href="#export-for-streaming-inference" title="Permalink to this headline"></a></h2>
+<h2>Export for streaming inference<a class="headerlink" href="#export-for-streaming-inference" title="Permalink to this heading"></a></h2>
 <p>You can use the following script</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/blob/master/scripts/wenet/export-onnx-streaming.py">https://github.com/k2-fsa/sherpa-onnx/blob/master/scripts/wenet/export-onnx-streaming.py</a></p>
@@ -201,10 +203,10 @@
 </div>
 </section>
 <section id="faqs">
-<h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline"></a></h2>
+<h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading"></a></h2>
 </section>
 <section id="sherpa-onnx-csrc-online-wenet-ctc-model-cc-init-144-head-does-not-exist-in-the-metadata">
-<h2>sherpa-onnx/csrc/online-wenet-ctc-model.cc:Init:144 head does not exist in the metadata<a class="headerlink" href="#sherpa-onnx-csrc-online-wenet-ctc-model-cc-init-144-head-does-not-exist-in-the-metadata" title="Permalink to this headline"></a></h2>
+<h2>sherpa-onnx/csrc/online-wenet-ctc-model.cc:Init:144 head does not exist in the metadata<a class="headerlink" href="#sherpa-onnx-csrc-online-wenet-ctc-model-cc-init-144-head-does-not-exist-in-the-metadata" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">fangjun</span><span class="o">/</span><span class="nb">open</span><span class="o">-</span><span class="n">source</span><span class="o">/</span><span class="n">sherpa</span><span class="o">-</span><span class="n">onnx</span><span class="o">/</span><span class="n">sherpa</span><span class="o">-</span><span class="n">onnx</span><span class="o">/</span><span class="n">csrc</span><span class="o">/</span><span class="n">online</span><span class="o">-</span><span class="n">wenet</span><span class="o">-</span><span class="n">ctc</span><span class="o">-</span><span class="n">model</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="n">Init</span><span class="p">:</span><span class="mi">144</span> <span class="n">head</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">metadata</span>
 </pre></div>
 </div>

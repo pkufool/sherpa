@@ -16,6 +16,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -68,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../pretrained_models/index.html">Pre-trained models</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Text-to-speech (TTS)</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../hf-space.html">Huggingface space</a></li>
@@ -116,10 +118,10 @@
            <div itemprop="articleBody">
              
   <section id="vits">
-<h1>vits<a class="headerlink" href="#vits" title="Permalink to this headline"></a></h1>
+<h1>vits<a class="headerlink" href="#vits" title="Permalink to this heading"></a></h1>
 <p>This page lists pre-trained <a class="reference external" href="https://github.com/jaywalnut310/vits">vits</a> models.</p>
 <section id="all-models-in-a-single-table">
-<h2>All models in a single table<a class="headerlink" href="#all-models-in-a-single-table" title="Permalink to this headline"></a></h2>
+<h2>All models in a single table<a class="headerlink" href="#all-models-in-a-single-table" title="Permalink to this heading"></a></h2>
 <p>The following table summarizes the information of all models in this page.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -211,7 +213,7 @@ we don’t list all of them on this page. Please find them at
 </table>
 </section>
 <section id="ljspeech-english-single-speaker">
-<span id="vits-model-vits-ljspeech"></span><h2>ljspeech (English, single-speaker)<a class="headerlink" href="#ljspeech-english-single-speaker" title="Permalink to this headline"></a></h2>
+<span id="vits-model-vits-ljspeech"></span><h2>ljspeech (English, single-speaker)<a class="headerlink" href="#ljspeech-english-single-speaker" title="Permalink to this heading"></a></h2>
 <p>This model is converted from <a class="reference external" href="https://drive.google.com/file/d/1q86w74Ygw2hNzYP9cWkeClGT5X25PvBT/view?usp=drive_link">pretrained_ljspeech.pth</a>,
 which is trained by the <a class="reference external" href="https://github.com/jaywalnut310/vits">vits</a> author <a class="reference external" href="https://github.com/jaywalnut310">Jaehyeon Kim</a> on
 the <a class="reference external" href="https://keithito.com/LJ-Speech-Dataset/">LJ Speech</a> dataset. It supports only English and is a single-speaker model.</p>
@@ -222,7 +224,7 @@ the <a class="reference external" href="https://keithito.com/LJ-Speech-Dataset/"
 </div>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="download-the-model">
-<h3>Download the model<a class="headerlink" href="#download-the-model" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#download-the-model" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -240,7 +242,7 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="generate-speech-with-executable-compiled-from-c">
-<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#generate-speech-with-executable-compiled-from-c" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#generate-speech-with-executable-compiled-from-c" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
@@ -284,7 +286,7 @@ Sample<span class="w"> </span>Encoding:<span class="w"> </span><span class="m">1
   </tr>
 </table></section>
 <section id="generate-speech-with-python-script">
-<h3>Generate speech with Python script<a class="headerlink" href="#generate-speech-with-python-script" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with Python script<a class="headerlink" href="#generate-speech-with-python-script" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 python3<span class="w"> </span>./python-api-examples/offline-tts.py<span class="w"> </span><span class="se">\</span>
@@ -329,7 +331,7 @@ Sample<span class="w"> </span>Encoding:<span class="w"> </span><span class="m">1
 </table></section>
 </section>
 <section id="vctk-english-multi-speaker-109-speakers">
-<span id="vits-model-vits-vctk"></span><h2>VCTK (English, multi-speaker, 109 speakers)<a class="headerlink" href="#vctk-english-multi-speaker-109-speakers" title="Permalink to this headline"></a></h2>
+<span id="vits-model-vits-vctk"></span><h2>VCTK (English, multi-speaker, 109 speakers)<a class="headerlink" href="#vctk-english-multi-speaker-109-speakers" title="Permalink to this heading"></a></h2>
 <p>This model is converted from <a class="reference external" href="https://drive.google.com/file/d/11aHOlhnxzjpdWDpsz1vFDCzbeEfoIxru/view?usp=drive_link">pretrained_vctk.pth</a>,
 which is trained by the <a class="reference external" href="https://github.com/jaywalnut310/vits">vits</a> author <a class="reference external" href="https://github.com/jaywalnut310">Jaehyeon Kim</a> on
 the <a class="reference external" href="https://datashare.ed.ac.uk/handle/10283/2950">VCTK</a> dataset. It supports only English and is a multi-speaker model. It contains
@@ -341,7 +343,7 @@ the <a class="reference external" href="https://datashare.ed.ac.uk/handle/10283/
 </div>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id2">
-<h3>Download the model<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -359,7 +361,7 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id3">
-<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
 <p>Since there are 109 speakers available, we can choose a speaker from 0 to 198.
 The default speaker ID is 0.</p>
 <p>We use speaker ID 0, 10, and 108 below to generate audio for the same text.</p>
@@ -435,7 +437,7 @@ The default speaker ID is 0.</p>
   </tr>
 </table></section>
 <section id="id4">
-<h3>Generate speech with Python script<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with Python script<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
 <p>We use speaker ID 30, 66, and 99 below to generate audio for different transcripts.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -510,7 +512,7 @@ python3<span class="w"> </span>./python-api-examples/offline-tts.py<span class="
 </table></section>
 </section>
 <section id="aishell3-chinese-multi-speaker-174-speakers">
-<span id="vits-model-aishell3"></span><h2>aishell3 (Chinese, multi-speaker, 174 speakers)<a class="headerlink" href="#aishell3-chinese-multi-speaker-174-speakers" title="Permalink to this headline"></a></h2>
+<span id="vits-model-aishell3"></span><h2>aishell3 (Chinese, multi-speaker, 174 speakers)<a class="headerlink" href="#aishell3-chinese-multi-speaker-174-speakers" title="Permalink to this heading"></a></h2>
 <p>This model is converted from <a class="reference external" href="https://huggingface.co/jackyqs/vits-aishell3-175-chinese">https://huggingface.co/jackyqs/vits-aishell3-175-chinese</a>,
 which is trained on the <a class="reference external" href="https://www.openslr.org/93/">aishell3</a> dataset. It supports only Chinese and it’s a multi-speaker model.
 It contains 174 speakers.</p>
@@ -521,7 +523,7 @@ It contains 174 speakers.</p>
 </div>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id5">
-<h3>Download the model<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -539,7 +541,7 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id6">
-<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <p>Since there are 174 speakers available, we can choose a speaker from 0 to 173.
 The default speaker ID is 0.</p>
 <p>We use speaker ID 10, 33, and 99 below to generate audio for the same text.</p>
@@ -644,7 +646,7 @@ Currently, only number normalization is supported.</p>
   </tr>
 </table></section>
 <section id="id7">
-<h3>Generate speech with Python script<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with Python script<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <p>We use speaker ID 21, 41, and 45 below to generate audio for different transcripts.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -742,7 +744,7 @@ python3<span class="w"> </span>./python-api-examples/offline-tts.py<span class="
 </table></section>
 </section>
 <section id="csukuangfj-vits-zh-hf-fanchen-c-chinese-1-female">
-<span id="vits-zh-hf-fanchen-c"></span><h2>csukuangfj/vits-zh-hf-fanchen-C (Chinese, 1 female)<a class="headerlink" href="#csukuangfj-vits-zh-hf-fanchen-c-chinese-1-female" title="Permalink to this headline"></a></h2>
+<span id="vits-zh-hf-fanchen-c"></span><h2>csukuangfj/vits-zh-hf-fanchen-C (Chinese, 1 female)<a class="headerlink" href="#csukuangfj-vits-zh-hf-fanchen-c-chinese-1-female" title="Permalink to this heading"></a></h2>
 <p>You can download the model at
 <a class="reference external" href="https://huggingface.co/csukuangfj/vits-zh-hf-fanchen-C/tree/main">https://huggingface.co/csukuangfj/vits-zh-hf-fanchen-C/tree/main</a></p>
 <div class="admonition hint">
@@ -812,7 +814,7 @@ sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
   </tr>
 </table></section>
 <section id="csukuangfj-vits-zh-hf-fanchen-wnj-chinese-1-male">
-<span id="vits-zh-hf-fanchen-wnj"></span><h2>csukuangfj/vits-zh-hf-fanchen-wnj (Chinese, 1 male)<a class="headerlink" href="#csukuangfj-vits-zh-hf-fanchen-wnj-chinese-1-male" title="Permalink to this headline"></a></h2>
+<span id="vits-zh-hf-fanchen-wnj"></span><h2>csukuangfj/vits-zh-hf-fanchen-wnj (Chinese, 1 male)<a class="headerlink" href="#csukuangfj-vits-zh-hf-fanchen-wnj-chinese-1-male" title="Permalink to this heading"></a></h2>
 <p>You can download the model at
 <a class="reference external" href="https://huggingface.co/csukuangfj/vits-zh-hf-fanchen-wnj/tree/main">https://huggingface.co/csukuangfj/vits-zh-hf-fanchen-wnj/tree/main</a></p>
 <div class="admonition hint">
@@ -880,7 +882,7 @@ sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
   </tr>
 </table></section>
 <section id="csukuangfj-vits-zh-hf-theresa-chinese-804-speakers">
-<span id="vits-zh-hf-theresa"></span><h2>csukuangfj/vits-zh-hf-theresa (Chinese, 804 speakers)<a class="headerlink" href="#csukuangfj-vits-zh-hf-theresa-chinese-804-speakers" title="Permalink to this headline"></a></h2>
+<span id="vits-zh-hf-theresa"></span><h2>csukuangfj/vits-zh-hf-theresa (Chinese, 804 speakers)<a class="headerlink" href="#csukuangfj-vits-zh-hf-theresa-chinese-804-speakers" title="Permalink to this heading"></a></h2>
 <p>You can download the model at
 <a class="reference external" href="https://huggingface.co/csukuangfj/vits-zh-hf-theresa/tree/main">https://huggingface.co/csukuangfj/vits-zh-hf-theresa/tree/main</a></p>
 <div class="admonition hint">
@@ -951,7 +953,7 @@ sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
   </tr>
 </table></section>
 <section id="csukuangfj-vits-zh-hf-eula-chinese-804-speakers">
-<span id="vits-zh-hf-eula"></span><h2>csukuangfj/vits-zh-hf-eula (Chinese, 804 speakers)<a class="headerlink" href="#csukuangfj-vits-zh-hf-eula-chinese-804-speakers" title="Permalink to this headline"></a></h2>
+<span id="vits-zh-hf-eula"></span><h2>csukuangfj/vits-zh-hf-eula (Chinese, 804 speakers)<a class="headerlink" href="#csukuangfj-vits-zh-hf-eula-chinese-804-speakers" title="Permalink to this heading"></a></h2>
 <p>You can download the model at
 <a class="reference external" href="https://huggingface.co/csukuangfj/vits-zh-hf-eula/tree/main">https://huggingface.co/csukuangfj/vits-zh-hf-eula/tree/main</a></p>
 <div class="admonition hint">
@@ -1021,7 +1023,7 @@ sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
   </tr>
 </table></section>
 <section id="en-us-lessac-medium-english-single-speaker">
-<span id="vits-model-en-us-lessac-medium"></span><h2>en_US-lessac-medium (English, single-speaker)<a class="headerlink" href="#en-us-lessac-medium-english-single-speaker" title="Permalink to this headline"></a></h2>
+<span id="vits-model-en-us-lessac-medium"></span><h2>en_US-lessac-medium (English, single-speaker)<a class="headerlink" href="#en-us-lessac-medium-english-single-speaker" title="Permalink to this heading"></a></h2>
 <p>This model is converted from <a class="reference external" href="https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium">https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium</a>.</p>
 <p>The dataset used to train the model is <a class="reference external" href="https://www.cstr.ed.ac.uk/projects/blizzard/2013/lessac_blizzard2013/">lessac_blizzard2013</a>.</p>
 <div class="admonition hint">
@@ -1030,7 +1032,7 @@ sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
 </div>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id8">
-<h3>Download the model<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1045,7 +1047,7 @@ tar<span class="w"> </span>xf<span class="w"> </span>vits-piper-en_US-lessac-med
 </div>
 </section>
 <section id="id9">
-<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with executable compiled from C++<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-offline-tts<span class="w"> </span><span class="se">\</span>
@@ -1106,7 +1108,7 @@ Sample<span class="w"> </span>Encoding:<span class="w"> </span><span class="m">1
   </tr>
 </table></section>
 <section id="id10">
-<h3>Generate speech with Python script<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<h3>Generate speech with Python script<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 python3<span class="w"> </span>./python-api-examples/offline-tts.py<span class="w"> </span><span class="se">\</span>

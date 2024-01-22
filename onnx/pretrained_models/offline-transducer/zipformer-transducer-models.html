@@ -16,6 +16,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -68,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pre-trained models</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../online-transducer/index.html">Online transducer models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../online-paraformer/index.html">Online paraformer models</a></li>
@@ -121,19 +123,19 @@
            <div itemprop="articleBody">
              
   <section id="zipformer-transducer-based-models">
-<span id="sherpa-onnx-offline-zipformer-transducer-models"></span><h1>Zipformer-transducer-based Models<a class="headerlink" href="#zipformer-transducer-based-models" title="Permalink to this headline"></a></h1>
+<span id="sherpa-onnx-offline-zipformer-transducer-models"></span><h1>Zipformer-transducer-based Models<a class="headerlink" href="#zipformer-transducer-based-models" title="Permalink to this heading"></a></h1>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Please refer to <a class="reference internal" href="../../install/index.html#install-sherpa-onnx"><span class="std std-ref">Installation</span></a> to install <cite>sherpa-onnx</cite>
 before you read this section.</p>
 </div>
 <section id="sherpa-onnx-zipformer-gigaspeech-2023-12-12-english">
-<h2>sherpa-onnx-zipformer-gigaspeech-2023-12-12 (English)<a class="headerlink" href="#sherpa-onnx-zipformer-gigaspeech-2023-12-12-english" title="Permalink to this headline"></a></h2>
+<h2>sherpa-onnx-zipformer-gigaspeech-2023-12-12 (English)<a class="headerlink" href="#sherpa-onnx-zipformer-gigaspeech-2023-12-12-english" title="Permalink to this heading"></a></h2>
 <p>Training code for this model is <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/1254">https://github.com/k2-fsa/icefall/pull/1254</a>.
 It supports only English since it is trained on the <a class="reference external" href="https://github.com/SpeechColab/GigaSpeech">GigaSpeech</a> dataset.</p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="download-the-model">
-<h3>Download the model<a class="headerlink" href="#download-the-model" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#download-the-model" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-gigaspeech-2023-12-12.tar.bz2
 tar<span class="w"> </span>xf<span class="w"> </span>sherpa-onnx-zipformer-gigaspeech-2023-12-12.tar.bz2
@@ -157,14 +159,14 @@ drwxr-xr-x<span class="w">  </span><span class="m">5</span><span class="w"> </sp
 </div>
 </section>
 <section id="decode-wave-files">
-<h3>Decode wave files<a class="headerlink" href="#decode-wave-files" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#decode-wave-files" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="fp32">
-<h4>fp32<a class="headerlink" href="#fp32" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#fp32" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -207,7 +209,7 @@ Real time factor (RTF): 1.407 / 28.165 = 0.050
 </div>
 </section>
 <section id="int8">
-<h4>int8<a class="headerlink" href="#int8" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#int8" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -251,7 +253,7 @@ Real time factor (RTF): 1.101 / 28.165 = 0.039
 </section>
 </section>
 <section id="speech-recognition-from-a-microphone">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#speech-recognition-from-a-microphone" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#speech-recognition-from-a-microphone" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -263,7 +265,7 @@ Real time factor (RTF): 1.101 / 28.165 = 0.039
 </div>
 </section>
 <section id="speech-recognition-from-a-microphone-with-vad">
-<h3>Speech recognition from a microphone with VAD<a class="headerlink" href="#speech-recognition-from-a-microphone-with-vad" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone with VAD<a class="headerlink" href="#speech-recognition-from-a-microphone-with-vad" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx
 
@@ -278,7 +280,7 @@ wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/downl
 </section>
 </section>
 <section id="zrjin-sherpa-onnx-zipformer-multi-zh-hans-2023-9-2-chinese">
-<h2>zrjin/sherpa-onnx-zipformer-multi-zh-hans-2023-9-2 (Chinese)<a class="headerlink" href="#zrjin-sherpa-onnx-zipformer-multi-zh-hans-2023-9-2-chinese" title="Permalink to this headline"></a></h2>
+<h2>zrjin/sherpa-onnx-zipformer-multi-zh-hans-2023-9-2 (Chinese)<a class="headerlink" href="#zrjin-sherpa-onnx-zipformer-multi-zh-hans-2023-9-2-chinese" title="Permalink to this heading"></a></h2>
 <p>This model is from</p>
 <p><a class="reference external" href="https://huggingface.co/zrjin/sherpa-onnx-zipformer-multi-zh-hans-2023-9-2">https://huggingface.co/zrjin/sherpa-onnx-zipformer-multi-zh-hans-2023-9-2</a></p>
 <p>which supports Chinese as it is trained on whatever datasets involved in the <a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/multi_zh-hans/ASR/">multi-zh_hans</a> recipe.</p>
@@ -286,7 +288,7 @@ wget<span class="w"> </span>https://github.com/k2-fsa/sherpa-onnx/releases/downl
 <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/1238">https://github.com/k2-fsa/icefall/pull/1238</a>.</p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id1">
-<h3>Download the model<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -309,14 +311,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id2">
-<h3>Decode wave files<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id3">
-<h4>fp32<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -363,7 +365,7 @@ Real time factor (RTF): 0.362 / 15.289 = 0.024
 </div>
 </section>
 <section id="id4">
-<h4>int8<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -411,7 +413,7 @@ Real time factor (RTF): 0.305 / 15.289 = 0.020
 </section>
 </section>
 <section id="id5">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -424,7 +426,7 @@ Real time factor (RTF): 0.305 / 15.289 = 0.020
 </section>
 </section>
 <section id="yfyeung-icefall-asr-cv-corpus-13-0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17-english">
-<h2>yfyeung/icefall-asr-cv-corpus-13.0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17 (English)<a class="headerlink" href="#yfyeung-icefall-asr-cv-corpus-13-0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17-english" title="Permalink to this headline"></a></h2>
+<h2>yfyeung/icefall-asr-cv-corpus-13.0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17 (English)<a class="headerlink" href="#yfyeung-icefall-asr-cv-corpus-13-0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17-english" title="Permalink to this heading"></a></h2>
 <p>This model is from</p>
 <p><a class="reference external" href="https://huggingface.co/yfyeung/icefall-asr-cv-corpus-13.0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17">https://huggingface.co/yfyeung/icefall-asr-cv-corpus-13.0-2023-03-09-en-pruned-transducer-stateless7-2023-04-17</a></p>
 <p>which supports only English as it is trained on the <a class="reference external" href="https://commonvoice.mozilla.org">CommonVoice</a> English dataset.</p>
@@ -432,7 +434,7 @@ Real time factor (RTF): 0.305 / 15.289 = 0.020
 <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/997">https://github.com/k2-fsa/icefall/pull/997</a>.</p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id6">
-<h3>Download the model<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -455,14 +457,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id7">
-<h3>Decode wave files<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id8">
-<h4>fp32<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -505,7 +507,7 @@ Real time factor (RTF): 1.611 / 28.165 = 0.057
 </div>
 </section>
 <section id="id9">
-<h4>int8<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -549,7 +551,7 @@ Real time factor (RTF): 1.368 / 28.165 = 0.049
 </section>
 </section>
 <section id="id10">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -562,7 +564,7 @@ Real time factor (RTF): 1.368 / 28.165 = 0.049
 </section>
 </section>
 <section id="pkufool-icefall-asr-zipformer-wenetspeech-20230615-chinese">
-<h2>pkufool/icefall-asr-zipformer-wenetspeech-20230615 (Chinese)<a class="headerlink" href="#pkufool-icefall-asr-zipformer-wenetspeech-20230615-chinese" title="Permalink to this headline"></a></h2>
+<h2>pkufool/icefall-asr-zipformer-wenetspeech-20230615 (Chinese)<a class="headerlink" href="#pkufool-icefall-asr-zipformer-wenetspeech-20230615-chinese" title="Permalink to this heading"></a></h2>
 <p>This model is from</p>
 <p><a class="reference external" href="https://huggingface.co/pkufool/icefall-asr-zipformer-wenetspeech-20230615">https://huggingface.co/pkufool/icefall-asr-zipformer-wenetspeech-20230615</a></p>
 <p>which supports only Chinese as it is trained on the <a class="reference external" href="https://github.com/wenet-e2e/WenetSpeech">WenetSpeech</a> corpus.</p>
@@ -570,7 +572,7 @@ Real time factor (RTF): 1.368 / 28.165 = 0.049
 <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/1130">https://github.com/k2-fsa/icefall/pull/1130</a>.</p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id11">
-<h3>Download the model<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -593,14 +595,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id12">
-<h3>Decode wave files<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id13">
-<h4>fp32<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -653,7 +655,7 @@ Real time factor (RTF): 0.458 / 15.289 = 0.030
 </div>
 </section>
 <section id="id14">
-<h4>int8<a class="headerlink" href="#id14" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -707,7 +709,7 @@ Real time factor (RTF): 0.338 / 15.289 = 0.022
 </section>
 </section>
 <section id="id15">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -720,7 +722,7 @@ Real time factor (RTF): 0.338 / 15.289 = 0.022
 </section>
 </section>
 <section id="csukuangfj-sherpa-onnx-zipformer-large-en-2023-06-26-english">
-<h2>csukuangfj/sherpa-onnx-zipformer-large-en-2023-06-26 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-large-en-2023-06-26-english" title="Permalink to this headline"></a></h2>
+<h2>csukuangfj/sherpa-onnx-zipformer-large-en-2023-06-26 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-large-en-2023-06-26-english" title="Permalink to this heading"></a></h2>
 <p>This model is converted from</p>
 <p><a class="reference external" href="https://huggingface.co/Zengwei/icefall-asr-librispeech-zipformer-large-2023-05-16">https://huggingface.co/Zengwei/icefall-asr-librispeech-zipformer-large-2023-05-16</a></p>
 <p>which supports only English as it is trained on the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> corpus.</p>
@@ -728,7 +730,7 @@ Real time factor (RTF): 0.338 / 15.289 = 0.022
 <p><a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/zipformer">https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/zipformer</a></p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id16">
-<h3>Download the model<a class="headerlink" href="#id16" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -750,14 +752,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id17">
-<h3>Decode wave files<a class="headerlink" href="#id17" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id18">
-<h4>fp32<a class="headerlink" href="#id18" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -804,7 +806,7 @@ Real time factor (RTF): 1.843 / 28.165 = 0.065
 </div>
 </section>
 <section id="id19">
-<h4>int8<a class="headerlink" href="#id19" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -852,7 +854,7 @@ Real time factor (RTF): 1.490 / 28.165 = 0.053
 </section>
 </section>
 <section id="id20">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id20" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -865,7 +867,7 @@ Real time factor (RTF): 1.490 / 28.165 = 0.053
 </section>
 </section>
 <section id="csukuangfj-sherpa-onnx-zipformer-small-en-2023-06-26-english">
-<h2>csukuangfj/sherpa-onnx-zipformer-small-en-2023-06-26 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-small-en-2023-06-26-english" title="Permalink to this headline"></a></h2>
+<h2>csukuangfj/sherpa-onnx-zipformer-small-en-2023-06-26 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-small-en-2023-06-26-english" title="Permalink to this heading"></a></h2>
 <p>This model is converted from</p>
 <p><a class="reference external" href="https://huggingface.co/Zengwei/icefall-asr-librispeech-zipformer-small-2023-05-16">https://huggingface.co/Zengwei/icefall-asr-librispeech-zipformer-small-2023-05-16</a></p>
 <p>which supports only English as it is trained on the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> corpus.</p>
@@ -873,7 +875,7 @@ Real time factor (RTF): 1.490 / 28.165 = 0.053
 <p><a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/zipformer">https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/zipformer</a></p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id22">
-<h3>Download the model<a class="headerlink" href="#id22" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -895,14 +897,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id23">
-<h3>Decode wave files<a class="headerlink" href="#id23" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id24">
-<h4>fp32<a class="headerlink" href="#id24" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -949,7 +951,7 @@ Real time factor (RTF): 0.953 / 28.165 = 0.034
 </div>
 </section>
 <section id="id25">
-<h4>int8<a class="headerlink" href="#id25" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -997,7 +999,7 @@ Real time factor (RTF): 0.891 / 28.165 = 0.032
 </section>
 </section>
 <section id="id26">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id26" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -1010,7 +1012,7 @@ Real time factor (RTF): 0.891 / 28.165 = 0.032
 </section>
 </section>
 <section id="csukuangfj-sherpa-onnx-zipformer-en-2023-06-26-english">
-<span id="sherpa-onnx-zipformer-en-2023-06-26-english"></span><h2>csukuangfj/sherpa-onnx-zipformer-en-2023-06-26 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-en-2023-06-26-english" title="Permalink to this headline"></a></h2>
+<span id="sherpa-onnx-zipformer-en-2023-06-26-english"></span><h2>csukuangfj/sherpa-onnx-zipformer-en-2023-06-26 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-en-2023-06-26-english" title="Permalink to this heading"></a></h2>
 <p>This model is converted from</p>
 <p><a class="reference external" href="https://huggingface.co/Zengwei/icefall-asr-librispeech-zipformer-2023-05-15">https://huggingface.co/Zengwei/icefall-asr-librispeech-zipformer-2023-05-15</a></p>
 <p>which supports only English as it is trained on the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> corpus.</p>
@@ -1018,7 +1020,7 @@ Real time factor (RTF): 0.891 / 28.165 = 0.032
 <p><a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/zipformer">https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/zipformer</a></p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id28">
-<h3>Download the model<a class="headerlink" href="#id28" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1039,14 +1041,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id29">
-<h3>Decode wave files<a class="headerlink" href="#id29" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id30">
-<h4>fp32<a class="headerlink" href="#id30" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id30" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1093,7 +1095,7 @@ Real time factor (RTF): 1.301 / 28.165 = 0.046
 </div>
 </section>
 <section id="id31">
-<h4>int8<a class="headerlink" href="#id31" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id31" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1141,7 +1143,7 @@ Real time factor (RTF): 1.106 / 28.165 = 0.039
 </section>
 </section>
 <section id="id32">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id32" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id32" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -1154,13 +1156,13 @@ Real time factor (RTF): 1.106 / 28.165 = 0.039
 </section>
 </section>
 <section id="icefall-asr-multidataset-pruned-transducer-stateless7-2023-05-04-english">
-<span id="id33"></span><h2>icefall-asr-multidataset-pruned_transducer_stateless7-2023-05-04 (English)<a class="headerlink" href="#icefall-asr-multidataset-pruned-transducer-stateless7-2023-05-04-english" title="Permalink to this headline"></a></h2>
+<span id="id33"></span><h2>icefall-asr-multidataset-pruned_transducer_stateless7-2023-05-04 (English)<a class="headerlink" href="#icefall-asr-multidataset-pruned-transducer-stateless7-2023-05-04-english" title="Permalink to this heading"></a></h2>
 <p>This model is trained using GigaSpeech + LibriSpeech + Common Voice 13.0 with zipformer</p>
 <p>See <a class="reference external" href="https://github.com/k2-fsa/icefall/pull/1010">https://github.com/k2-fsa/icefall/pull/1010</a> if you are interested in how
 it is trained.</p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id34">
-<h3>Download the model<a class="headerlink" href="#id34" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id34" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">GIT_LFS_SKIP_SMUDGE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/yfyeung/icefall-asr-multidataset-pruned_transducer_stateless7-2023-05-04
 <span class="nb">cd</span><span class="w"> </span>icefall-asr-multidataset-pruned_transducer_stateless7-2023-05-04/exp
@@ -1180,14 +1182,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id35">
-<h3>Decode wave files<a class="headerlink" href="#id35" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id35" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id36">
-<h4>fp32<a class="headerlink" href="#id36" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id36" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1230,7 +1232,7 @@ Real time factor (RTF): 1.662 / 28.165 = 0.059
 </div>
 </section>
 <section id="id37">
-<h4>int8<a class="headerlink" href="#id37" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id37" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1274,7 +1276,7 @@ Real time factor (RTF): 1.424 / 28.165 = 0.051
 </section>
 </section>
 <section id="id38">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id38" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id38" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -1287,7 +1289,7 @@ Real time factor (RTF): 1.424 / 28.165 = 0.051
 </section>
 </section>
 <section id="csukuangfj-sherpa-onnx-zipformer-en-2023-04-01-english">
-<span id="sherpa-onnx-zipformer-en-2023-04-01"></span><h2>csukuangfj/sherpa-onnx-zipformer-en-2023-04-01 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-en-2023-04-01-english" title="Permalink to this headline"></a></h2>
+<span id="sherpa-onnx-zipformer-en-2023-04-01"></span><h2>csukuangfj/sherpa-onnx-zipformer-en-2023-04-01 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-en-2023-04-01-english" title="Permalink to this heading"></a></h2>
 <p>This model is converted from</p>
 <p><a class="reference external" href="https://huggingface.co/WeijiZhuang/icefall-asr-librispeech-pruned-transducer-stateless8-2022-12-02">https://huggingface.co/WeijiZhuang/icefall-asr-librispeech-pruned-transducer-stateless8-2022-12-02</a></p>
 <p>which supports only English as it is trained on the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> and <a class="reference external" href="https://github.com/SpeechColab/GigaSpeech">GigaSpeech</a> corpus.</p>
@@ -1295,7 +1297,7 @@ Real time factor (RTF): 1.424 / 28.165 = 0.051
 <p><a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/pruned_transducer_stateless8">https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/pruned_transducer_stateless8</a></p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id39">
-<h3>Download the model<a class="headerlink" href="#id39" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id39" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1317,14 +1319,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id40">
-<h3>Decode wave files<a class="headerlink" href="#id40" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id40" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id41">
-<h4>fp32<a class="headerlink" href="#id41" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id41" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1371,7 +1373,7 @@ Real time factor (RTF): 2.151 / 28.165 = 0.076
 </div>
 </section>
 <section id="id42">
-<h4>int8<a class="headerlink" href="#id42" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id42" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1419,7 +1421,7 @@ Real time factor (RTF): 1.478 / 28.165 = 0.052
 </section>
 </section>
 <section id="id43">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id43" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id43" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
@@ -1432,7 +1434,7 @@ Real time factor (RTF): 1.478 / 28.165 = 0.052
 </section>
 </section>
 <section id="csukuangfj-sherpa-onnx-zipformer-en-2023-03-30-english">
-<span id="sherpa-onnx-zipformer-en-2023-03-30"></span><h2>csukuangfj/sherpa-onnx-zipformer-en-2023-03-30 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-en-2023-03-30-english" title="Permalink to this headline"></a></h2>
+<span id="sherpa-onnx-zipformer-en-2023-03-30"></span><h2>csukuangfj/sherpa-onnx-zipformer-en-2023-03-30 (English)<a class="headerlink" href="#csukuangfj-sherpa-onnx-zipformer-en-2023-03-30-english" title="Permalink to this heading"></a></h2>
 <p>This model is converted from</p>
 <p><a class="reference external" href="https://huggingface.co/csukuangfj/icefall-asr-librispeech-pruned-transducer-stateless7-2022-11-11">https://huggingface.co/csukuangfj/icefall-asr-librispeech-pruned-transducer-stateless7-2022-11-11</a></p>
 <p>which supports only English as it is trained on the <a class="reference external" href="https://www.openslr.org/12">LibriSpeech</a> corpus.</p>
@@ -1440,7 +1442,7 @@ Real time factor (RTF): 1.478 / 28.165 = 0.052
 <p><a class="reference external" href="https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/pruned_transducer_stateless7">https://github.com/k2-fsa/icefall/tree/master/egs/librispeech/ASR/pruned_transducer_stateless7</a></p>
 <p>In the following, we describe how to download it and use it with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a>.</p>
 <section id="id44">
-<h3>Download the model<a class="headerlink" href="#id44" title="Permalink to this headline"></a></h3>
+<h3>Download the model<a class="headerlink" href="#id44" title="Permalink to this heading"></a></h3>
 <p>Please use the following commands to download it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1462,14 +1464,14 @@ the file sizes of <code class="docutils literal notranslate"><span class="pre">*
 </div>
 </section>
 <section id="id45">
-<h3>Decode wave files<a class="headerlink" href="#id45" title="Permalink to this headline"></a></h3>
+<h3>Decode wave files<a class="headerlink" href="#id45" title="Permalink to this heading"></a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It supports decoding only wave files of a single channel with 16-bit
 encoded samples, while the sampling rate does not need to be 16 kHz.</p>
 </div>
 <section id="id46">
-<h4>fp32<a class="headerlink" href="#id46" title="Permalink to this headline"></a></h4>
+<h4>fp32<a class="headerlink" href="#id46" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">fp32</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1516,7 +1518,7 @@ Real time factor (RTF): 1.950 / 28.165 = 0.069
 </div>
 </section>
 <section id="id47">
-<h4>int8<a class="headerlink" href="#id47" title="Permalink to this headline"></a></h4>
+<h4>int8<a class="headerlink" href="#id47" title="Permalink to this heading"></a></h4>
 <p>The following code shows how to use <code class="docutils literal notranslate"><span class="pre">int8</span></code> models to decode wave files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
@@ -1564,7 +1566,7 @@ Real time factor (RTF): 1.710 / 28.165 = 0.061
 </section>
 </section>
 <section id="id48">
-<h3>Speech recognition from a microphone<a class="headerlink" href="#id48" title="Permalink to this headline"></a></h3>
+<h3>Speech recognition from a microphone<a class="headerlink" href="#id48" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/sherpa-onnx
 
 ./build/bin/sherpa-onnx-microphone-offline<span class="w"> </span><span class="se">\</span>
