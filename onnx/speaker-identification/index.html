@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iOS &mdash; sherpa 1.3 documentation</title>
+  <title>Speaker Identification &mdash; sherpa 1.3 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Build sherpa-onnx for iOS" href="build-sherpa-onnx-swift.html" />
-    <link rel="prev" title="Build sherpa-onnx for Android" href="../android/build-sherpa-onnx.html" /> 
+    <link rel="next" title="Text-to-speech (TTS)" href="../tts/index.html" />
+    <link rel="prev" title="Small models" href="../pretrained_models/small-online-models.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,15 +66,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../go-api/index.html">Go API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp-api/index.html">C# API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android/index.html">Android</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">iOS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build-sherpa-onnx-swift.html">Build sherpa-onnx for iOS</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../ios/index.html">iOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../websocket/index.html">WebSocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hotwords/index.html">Hotwords (Contextual biasing)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kws/index.html">Open vocabulary keyword spotting (Customized keyword spotting)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pretrained_models/index.html">Pre-trained models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../speaker-identification/index.html">Speaker Identification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Speaker Identification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tts/index.html">Text-to-speech (TTS)</a></li>
 </ul>
 </li>
@@ -99,9 +96,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">sherpa-onnx</a> &raquo;</li>
-      <li>iOS</li>
+      <li>Speaker Identification</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/k2-fsa/sherpa/blob/master/docs/source/onnx/ios/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/k2-fsa/sherpa/blob/master/docs/source/onnx/speaker-identification/index.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -109,27 +106,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ios">
-<span id="sherpa-onnx-ios"></span><h1>iOS<a class="headerlink" href="#ios" title="Permalink to this heading"></a></h1>
-<p>In this section, we describe how to build an iOS app for <code class="docutils literal notranslate"><span class="pre">real-time</span></code> speech
-recognition with <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a> and run it within a simulator on your Mac,
-run it on you iPhone or iPad.</p>
+  <section id="speaker-identification">
+<h1>Speaker Identification<a class="headerlink" href="#speaker-identification" title="Permalink to this heading"></a></h1>
+<p>This page describes how to use <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a> for speaker identification.</p>
+<p>Please first follow <a class="reference internal" href="../install/index.html#install-sherpa-onnx"><span class="std std-ref">Installation</span></a> and/or <a class="reference internal" href="../python/install.html#install-sherpa-onnx-python"><span class="std std-ref">Install the Python Package</span></a>
+to install <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a> before you continue.</p>
+<p>Pre-trained models can be found at <a class="reference external" href="https://github.com/k2-fsa/sherpa-onnx/releases/tag/speaker-recongition-models">https://github.com/k2-fsa/sherpa-onnx/releases/tag/speaker-recongition-models</a></p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>During speech recognition, it does not need to access the Internet.
-Everyting is processed locally on your device.</p>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="build-sherpa-onnx-swift.html">Build sherpa-onnx for iOS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="build-sherpa-onnx-swift.html#requirement">Requirement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build-sherpa-onnx-swift.html#download-sherpa-onnx">Download sherpa-onnx</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build-sherpa-onnx-swift.html#build-sherpa-onnx-in-commandline-c-part">Build sherpa-onnx (in commandline, C++ Part)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build-sherpa-onnx-swift.html#build-sherpa-onnx-in-xcode">Build sherpa-onnx (in Xcode)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build-sherpa-onnx-swift.html#run-sherpa-onnx-on-your-iphone-ipad">Run sherpa-onnx on your iPhone/iPad</a></li>
-</ul>
-</li>
-</ul>
+<p>You can find Android APKs for each model at the following page</p>
+<p><a class="reference external" href="https://k2-fsa.github.io/sherpa/onnx/speaker-identification/apk.html">https://k2-fsa.github.io/sherpa/onnx/speaker-identification/apk.html</a></p>
 </div>
 </section>
 
@@ -137,8 +123,8 @@ Everyting is processed locally on your device.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../android/build-sherpa-onnx.html" class="btn btn-neutral float-left" title="Build sherpa-onnx for Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="build-sherpa-onnx-swift.html" class="btn btn-neutral float-right" title="Build sherpa-onnx for iOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../pretrained_models/small-online-models.html" class="btn btn-neutral float-left" title="Small models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tts/index.html" class="btn btn-neutral float-right" title="Text-to-speech (TTS)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
